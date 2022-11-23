@@ -8,10 +8,6 @@ const ExperienceToC = (props) => {
   const [ dateStr, setDateStr ] = useState('');
   const [ description, setDescription ] = useState([]);
 
-
-
-
-
   const handleExperience = (e) => {
     // e.preventDefault();
     console.log('handleExperience');
