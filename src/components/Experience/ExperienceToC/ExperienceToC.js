@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './ExperienceToC.scss';
 let experienceInfo = require('../../../assets/experienceInfo.js');
+
+
+
 const ExperienceToC = (props) => {
-  // const [ experienceSelect, setExperienceSelect ] = useState('test');
+  // const experienceSelects = experienceInfo.map((val, index) => 
+  //   <li key={ `experience-select_${index}` }>
+  //     <input className="experience-input" type='radio' value={val.company} name='radio' id='radio1' onClick={handleExperience}/>
+  //     <label for='radio1'>{val.company}</label>
+  //   </li>
+  // )
+
   const [ company, setCompany ] = useState('');
   const [ position, setPosition ] = useState('');
   const [ dateStr, setDateStr ] = useState('');
   const [ description, setDescription ] = useState([]);
 
-  const handleExperience = (e) => {
+  function handleExperience(e) {
     // e.preventDefault();
     console.log('handleExperience');
     console.log(e.target.value);
@@ -27,36 +36,36 @@ const ExperienceToC = (props) => {
   }
 
   const descriptionBullet = description.map((val, index) =>
-    <li key = {index}>
-      {val}
+    <li className="experience-description-info-li" key = {index}>
+           {val}
     </li>
   )
 
   return (
-    <>
+    <div className="experience-toc">
       <ul className="experience-list">
-        <li className="list1">
-          <input type='radio' value='OverVue' name='radio' id='radio1' onClick={handleExperience}/>
+        <li className="experience-select">
+          <input className="experience-input" type='radio' value='OverVue' name='radio' id='radio1' onClick={handleExperience}/>
           <label for='radio1'>OverVue</label>
         </li>
-        <li>
-          <input type='radio' value='SARA' name='radio'  id='radio2' onClick={handleExperience}/>
+        <li className="experience-select">
+          <input className="experience-input" type='radio' value='SARA' name='radio'  id='radio2' onClick={handleExperience}/>
           <label for='radio2'>SARA</label>
         </li>
-        <li>
-          <input type='radio' value='Molex' name='radio'  id='radio3' onClick={handleExperience}/>
+        <li className="experience-select">
+          <input className="experience-input" type='radio' value='Molex' name='radio'  id='radio3' onClick={handleExperience}/>
           <label for='radio3'>Molex</label>
         </li>
       </ul>
       <div className="experience-info-blurb">
-        <h1> {company} </h1>
-        <h1> {position} </h1>
-        <h1> {dateStr} </h1>
-        <ul> 
+        <div className="experience-company-info"> {company} </div> 
+        <div className="experience-position-info"> {position} </div>
+        <div className="experience-date-info"> {dateStr} </div>
+        <ul className="experience-description-info"> 
           {descriptionBullet} 
         </ul>
       </div>
-    </>
+    </div>
   )
 }
 
