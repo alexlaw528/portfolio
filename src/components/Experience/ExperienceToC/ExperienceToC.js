@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './ExperienceToC.scss';
-let experienceInfo = require('../../../assets/experienceInfo.js');
+const experienceInfo = require('../../../assets/experienceInfo.js');
 
 
 
@@ -12,10 +12,10 @@ const ExperienceToC = (props) => {
   //   </li>
   // )
 
-  const [ company, setCompany ] = useState('');
-  const [ position, setPosition ] = useState('');
-  const [ dateStr, setDateStr ] = useState('');
-  const [ description, setDescription ] = useState([]);
+  const [ company, setCompany ] = useState(experienceInfo[0].company);
+  const [ position, setPosition ] = useState(experienceInfo[0].position);
+  const [ dateStr, setDateStr ] = useState(experienceInfo[0].dateStr);
+  const [ description, setDescription ] = useState(experienceInfo[0].description);
 
   function handleExperience(e) {
     // e.preventDefault();

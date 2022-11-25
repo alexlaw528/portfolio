@@ -19,6 +19,7 @@
 
 .experience-info-blurb {
   color: white;
+  animation: fadeIn .5s 1.8s backwards;
 
   .experience-company-info {
     color: #8d8d8d;
@@ -44,9 +45,10 @@
     font-size: 1rem;
     font-family: sans-serif;
     letter-spacing: 3px;
-    animation: fadeIn 1s 1.8s backwards;
     // border-style: solid;
   }
+
+
 
   .experience-company-info,
   .experience-position-info,

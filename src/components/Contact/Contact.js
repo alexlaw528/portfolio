@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className="container contact-section">
       <h1 className="contact-section-header"> 
-        03. Contact
+        Contact Me
       </h1>
       <EmailForm />
     </div>

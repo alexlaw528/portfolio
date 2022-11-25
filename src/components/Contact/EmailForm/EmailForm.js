@@ -19,14 +19,23 @@ const EmailForm = () => {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail}>
-      <label>Name</label>
-      <input type="text" name="user_name" />
-      <label>Email</label>
-      <input type="email" name="user_email" />
-      <label>Message</label>
-      <textarea name="message" />
-      <input type="submit" value="Send"/>
+    <form ref={form} className="contact-form" onSubmit={sendEmail}>
+      <div className="contact-user-input" id="contact-name-group">
+        <label className="contact-label" for="contact-name"> Name: </label>
+        <input type="text" className="contact-input" id="contact-name" name="user_name" />
+      </div>
+
+      <div className="contact-user-input" id="contact-email-group">
+        <label className="contact-label" for="contact-email"> Email: </label>
+        <input type="email" className="contact-input" id="contact-email" name="user_email" />
+      </div>
+
+      <div className="contact-user-input" id="contact-message-group">
+        <label className="contact-label" for="contact-message"> Message: </label>
+        <textarea id="contact-message" className="contact-input" name="message" />
+      </div>
+
+      <input id="contact-send" type="submit" value="Send"/>
     </form>
   )
 }
