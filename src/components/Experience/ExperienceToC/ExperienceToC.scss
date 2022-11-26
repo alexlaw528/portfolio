@@ -7,19 +7,38 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  color: white;
-  // border-style: solid;
+  color: rgb(135,136,142);
   justify-self: center;
   padding: 0.75rem;
+  width: 100%;
 
-  .experience-select::marker {
-      content: "▶";
+  .experience-select {
+    font-size: 1.25rem;
+    font-weight: 400;
+    border-left-style: solid;
+    border-left-width: 3px;
+    border-left-color: rgb(135,136,142);
+    justify-self: center;
+    padding: 0.5rem;
+    transition: 1s;
+  }
+
+  .experience-select:hover {
+    color: rgb(44,209,181);
+    background-color: rgb(15, 31, 55);
+    border-left-color: rgb(44,209,181);
+    transition: 1s;
+  }
+
+  label{
+    height: 0;
   }
 }
 
 .experience-info-blurb {
   color: white;
-  animation: fadeIn .5s 1.8s backwards;
+  animation: fadeIn .5s .25s backwards;
+
 
   .experience-company-info {
     color: #8d8d8d;
@@ -27,16 +46,14 @@
     font-size: 2rem;
     font-family: sans-serif;
     letter-spacing: 3px;
-    animation: fadeIn 1s 1.8s backwards;
   }
 
   .experience-position-info {
-    color: #8d8d8d;
+    color: rgb(44,209,181);
     font-weight: 400;
     font-size: 1.5rem;
     font-family: sans-serif;
     letter-spacing: 3px;
-    animation: fadeIn 1s 1.8s backwards;
   }
 
   .experience-date-info {
@@ -45,7 +62,6 @@
     font-size: 1rem;
     font-family: sans-serif;
     letter-spacing: 3px;
-    // border-style: solid;
   }
 
 
@@ -59,36 +75,38 @@
   .experience-description-info{
     margin-top: 1rem;
     list-style: none;
+    font-weight: 350;
+    letter-spacing: 1px;
 
     .experience-description-info-li{
       padding-left: 30px;
       position: relative;
       font-size: 1rem;
       margin-bottom: 1rem;
+      color: rgb(195, 208, 243);
     }
     .experience-description-info-li::before {
-      content: "▶";
+      content: "▷";
+      color: rgb(44,209,181);
       font-size: 0.1 rem;
       position: absolute;
       left: 0;
     }
-
-    
   }
 }
 
 
-// li {
-//   // margin-right: 15px;
-//   margin-bottom: 10px;
-//   font-size: 1rem;
-// }
 .experience-input {
   visibility:hidden;
 }
+
 label {
   cursor: pointer;
 }
-input:checked + label {
-  background: red;
+
+#highlight-on {
+  color: rgb(44,209,181);
+  background-color: rgb(15, 31, 55);
+  border-left-color: rgb(44,209,181);
+  transition: 1s;
 }
