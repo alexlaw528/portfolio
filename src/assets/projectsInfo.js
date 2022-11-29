@@ -1,11 +1,11 @@
 import overvue from "./images/overvue.jpg";
 import supersonic_inlet from "./images/supsersonic_inlet.png";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowUpRightFromSquare
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
+  faLinkedin
 } from '@fortawesome/free-brands-svg-icons';
 
 const projectsInfo = [
@@ -22,7 +22,12 @@ const projectsInfo = [
       {
         location: "Website",
         icon: faArrowUpRightFromSquare,
-        link: "https://www.overvue.org/"
+        link: "https://www.overvue.org/",
+      },
+      {
+        location: "LinkedIn",
+        icon: faLinkedin,
+        link: "https://www.linkedin.com/company/77007166/admin/",
       }
     ],
     tech: ["Vue", "Electron", "TypeScript"]

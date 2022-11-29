@@ -1,6 +1,5 @@
 import React from "react";
 import './ProjectCard.scss';
-import overvue from '../../../assets/images/overvue.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowUpRightFromSquare
