@@ -1,63 +1,46 @@
 import './Navbar.scss';
-import { Link, NavLink } from 'react-router-dom'
-// import LogoS from '../../assets/images/logo-s.png';
-// import LogoSubtitle from '../../assets/images/logo_sub.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faHome, 
-  faUser, 
-  faEnvelope, 
-  faRocket,
-} from '@fortawesome/free-solid-svg-icons';
-import {
-  faLinkedin,
-  faGithub,
-} from '@fortawesome/free-brands-svg-icons'
+// import Contact from '../Contact/Contact.js';
+// import Projects from '../Projects/Projects.js';
+import al_nav_logo2 from "../../assets/images/al_nav_logo2.png"
 
 
-const Sidebar = () => {
 
+// import { Link, NavLink } from 'react-router-dom'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import {
+//   faHome, 
+//   faUser, 
+//   faEnvelope, 
+//   faRocket,
+//   faA,
+//   faL,
+// } from '@fortawesome/free-solid-svg-icons';
+// import {
+//   faLinkedin,
+//   faGithub,
+// } from '@fortawesome/free-brands-svg-icons'
+
+
+const NavBar = () => {
   return (
-    <div className="nav-bar">
-      <Link className='logo' to='/'>
-        {/* <img src={LogoS} alt="logo" />
-        <img className="sub-logo" src={LogoSubtitle} alt="logo" /> */}
-        <FontAwesomeIcon icon={faRocket} color="#4d4d4e" className="sub-logo"/>
-      </Link>
-      <nav>
-        <NavLink exact="true" activeclassname="active" to="/">
-          <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
-        </NavLink>
-        <NavLink exact="true" activeclassname="active" className="about-link" to="/about">
-          <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
-        </NavLink>
-        <NavLink exact="true" activeclassname="active" className="contact-link" to="/contact">
-          <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
-        </NavLink>
-      </nav>
-      <ul>
-        <li>
-          <a 
-            target="_blank" 
-            rel='noreferrer' 
-            href='https://www.linkedin.com/in/alexlaw528/'
-          >
-            <FontAwesomeIcon icon={ faLinkedin } color="#4d4de"/>
-          </a>
-        </li>
-        <li>
-          <a 
-            target="_blank" 
-            rel='noreferrer' 
-            href='https://github.com/alexlaw528/'
-          >
-            <FontAwesomeIcon icon={ faGithub } color="#4d4de"/>
-          </a>
-        </li>
+    <div class="nav-container">
+      <ul className="nav-bar-link">
+          <li>
+            <a href="#nav-home" id="nav-home-logo">
+              {/* <FontAwesomeIcon icon={faA}/>
+              <FontAwesomeIcon icon={faL}/> */}
+              <img id="nav-logo" src={al_nav_logo2} alt="logo"/>
+            </a>
+          </li>
+
+          <div className="section-links">
+            <li><a href="#nav-experience">Experience</a></li>
+            <li><a href="#nav-projects">Projects</a></li>
+            <li><a href="#nav-contact">Contact</a></li>
+          </div>
       </ul>
     </div>
   )
-
 }
 
-export default Sidebar
+export default NavBar

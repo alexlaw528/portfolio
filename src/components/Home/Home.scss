@@ -1,15 +1,9 @@
 .home-page {
-  .text-zone {
-    // left: 10%;
-    // top: 50%;
-    // transform: translateY(-50%);
-    // width: 40%;
-    // max-height: 90%;
-    // border-style: solid;
-  }
+  height: 100vh;
+  margin-top: 100px;
 
   h1 {
-    color: #fff;
+    color: rgb(195, 208, 243);
     font-size: 53px;
     margin: 0;
     font-family: 'Coolvetica';
@@ -18,16 +12,16 @@
     &::before {
       // content: '<h1>';
       font-family: 'La Belle Aurore';
-      color: #ffd700;
+      color: rgb(44,209,181);
       font-size: 18px;
       margin-top: -40px;
-      left: 15px;
+      // left: 15px;
       opacity: 0.6;
     }
 
     &::after {
       font-family: 'La Belle Aurore';
-      color: #ffd700;
+      color:  rgb(44,209,181);
       font-size: 18px;
       margin-top: 18px;
       margin-left: 20px;
@@ -51,25 +45,25 @@ h2 {
   font-size: 11px;
   font-family: sans-serif;
   letter-spacing: 3px;
-  animation: fadeIn 1s 1.8s backwards;
+  animation: fadeIn .5s 1s backwards;
 }
 
 .flat-button {
-  color: #ffd700;
+  color:  white;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 4px;
   font-family: sans-serif;
   text-decoration: none;
   padding: 10px 18px;
-  border: 1px solid #ffd700;
+  border: 1px solid  rgb(44,209,181);
   margin-top: 25px;
   float: left;
-  animation: fadeIn 1s 1.8s backwards;
+  animation: fadeIn .5s 1s backwards;
   white-space: nowrap;
 
   &:hover {
-    background: #ffd700;
+    background: rgb(44,209,181);
     color: #333;
   }
 }
