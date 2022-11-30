@@ -1,72 +1,47 @@
 import React from "react";
 import './ProjectCard.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faArrowUpRightFromSquare
-} from '@fortawesome/free-solid-svg-icons';
-import {
-  faGithub,
-} from '@fortawesome/free-brands-svg-icons';
 
-// let projectsInfo = require('../../../assets/projectsInfo.js');
 import projectsInfo from '../../../assets/projectsInfo.js';
+const otherProjects = projectsInfo.slice(1, projectsInfo.length); 
 
 const ProjectCard = () => {
-  const projectCardList = projectsInfo.map((val, index) => 
-    <div class="card" key={index}>
-      <h5 class="card-title">{val.project}</h5>
-      <img class="card-img-top" src={val.image} alt={val.project} />
-      <div class="card-body">
-        <p class="card-text">
-          {val.description}
-        </p>
-        <div class="card-resouce-links">
-          {
-            val.links.map((links, linksIndex) => 
-              <a href={links.link} key={linksIndex}>
-                <FontAwesomeIcon icon={links.icon} />
-              </a>
-            )
-          }       
-        </div>
-        <div class="card-tech-used">
-          <ul>
+  const projectCardList = otherProjects.map((project, index) => 
+      <article class="postcard dark green">
+        <img class="postcard__img" src={project.image} alt="Title" />
+        <div class="postcard__text">
+          <h1 class="postcard__title green">{project.project}</h1>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">{project.description}</div>
+          <ul class="postcard__tagbox">
             {
-              val.tech.map((techVal, techValIndex) => 
-                <li key={techValIndex}>
-                  {techVal}
+              project.tech.map((tech, techIdx) => 
+                <li class="tag__tech">{tech}</li>
+              )
+            }
+          </ul>
+          <ul class="postcard__tagbox">
+            {
+              project.links.map((link, linkIdx) => 
+                <li class="tag__item">
+                  <a href={link.link}>
+                    <FontAwesomeIcon icon={link.icon} />
+                  </a>
                 </li>
               )
             }
           </ul>
         </div>
-      </div>
-    </div>
+      </article>
   )
   
 
   return ( 
-    <>
-      {/* <div class="card">
-        <h5 class="card-title">OverVue</h5>
-        <img class="card-img-top" src={overvue} alt="overvue"/>
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <div class="card-tech-used">
-            Vue, Electron, TypeScript
-          </div>
-          <div className="card-resource-links">
-            <a href='https://github.com/open-source-labs/OverVue/'>
-              <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
-            </a>
-            <a href='https://www.overvue.org/'>
-              <FontAwesomeIcon icon={faArrowUpRightFromSquare} color="#4d4d4e" />
-            </a>
-          </div>
-        </div>
-      </div> */}
-      {projectCardList}
-    </>
+    <section class="dark">
+      <div class="container py-4">
+        {projectCardList}
+      </div>
+    </section>
   )
 }
 

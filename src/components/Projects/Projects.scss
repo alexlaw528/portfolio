@@ -1,15 +1,15 @@
-
 .projects-section-header{
   color: white;
 }
 
 .other-projects-header{
-  color: white;
+  color: rgb(44,209,181);
+  font-weight: 400;
+  font-size: 1.25rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.75rem;
 }
 
 .other-projects-section{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  grid-auto-rows: auto;
+  padding: 0 5%;
 }
