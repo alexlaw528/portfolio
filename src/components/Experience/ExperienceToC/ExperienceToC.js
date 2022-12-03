@@ -14,7 +14,6 @@ const ExperienceToC = (props) => {
   function handleExperience(e) {
     setAnimate(!animate);
     setHighlight(e.target.id);
-    
     for (const key of experienceInfo) {
       const { company, position, dateStr, description } = key;
       if (e.target.value === company) {
@@ -43,23 +42,44 @@ const ExperienceToC = (props) => {
     <div className="experience-toc">
       <div className="experience-list">
         {radioSelector}
-
-        {/* Custom radio select for education */}
-        <div className="experience-select" id={highlight === "radio3" ? "highlight-on" : "highlight-off"}>
-          <input className="experience-input" type='radio' value='Education' name='radio' id='radio3' onClick={handleExperience}/>
-          <label className="experience-label" for='radio1'>Education</label>
-        </div>
       </div>
 
       <div key={Math.random()} className="experience-info-blurb" >
+        { company === "Education" ? 
+          <>
+            {
+              position.map((ele, idx) => 
+                <>
+                  <div className="experience-position-info"> {ele} </div>
+                  <div className="experience-date-info"> {dateStr[idx]} </div>
+                  <ul className="experience-description-info"> 
+                    <li className="experience-description-info-li">
+                      {description[idx]}
+                     </li>
+                  </ul>
+                  <br/>
+                  <br/>
+                </>
+              )
+            }
+          </>
+          :
+          <>
+            <div className="experience-position-info"> {position} </div>
+            <div className="experience-date-info"> {dateStr} </div>
+            <ul className="experience-description-info"> 
+              {descriptionBullet} 
+            </ul>
+          </>
+        }
+          {/* <div className="experience-position-info"> {position} </div>
+          <div className="experience-date-info"> {dateStr} </div>
+          <ul className="experience-description-info"> 
+            {descriptionBullet} 
+          </ul> */}
         
 
         
-        <div className="experience-position-info"> {position} </div>
-        <div className="experience-date-info"> {dateStr} </div>
-        <ul className="experience-description-info"> 
-          {descriptionBullet} 
-        </ul>
       </div>
     </div>
   )
