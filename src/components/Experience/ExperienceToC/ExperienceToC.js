@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import './ExperienceToC.scss';
 const experienceInfo = require('../../../assets/experienceInfo.js');
 
-
-
-
 const ExperienceToC = (props) => {
 
   const [ company, setCompany ] = useState(experienceInfo[0].company);
@@ -12,7 +9,7 @@ const ExperienceToC = (props) => {
   const [ dateStr, setDateStr ] = useState(experienceInfo[0].dateStr);
   const [ description, setDescription ] = useState(experienceInfo[0].description);
   const [ animate, setAnimate ] = useState(true);
-  const [ highlight, setHighlight ] = useState('radio1');
+  const [ highlight, setHighlight ] = useState('radio0');
 
   function handleExperience(e) {
     setAnimate(!animate);
@@ -35,26 +32,29 @@ const ExperienceToC = (props) => {
     </li>
   )
 
+  const radioSelector = experienceInfo.map((experience, index) => 
+    <div className="experience-select" id={highlight === `radio${index}` ? "highlight-on" : "highlight-off"}>
+      <input className="experience-input" type='radio' value={experience.company} name='radio' id={`radio${index}`} onClick={handleExperience}/>
+      <label className="experience-label" for={`radio${index}`}>{experience.company}</label>
+    </div>
+  )
+
   return (
     <div className="experience-toc">
       <div className="experience-list">
-        <div className="experience-select" id={highlight === "radio1" ? "highlight-on" : "highlight-off"}>
-          <input className="experience-input" type='radio' value='OverVue' name='radio' id='radio1' onClick={handleExperience}/>
-          <label className="experience-label" for='radio1'>OverVue</label>
-        </div>
-        <div className="experience-select" id={highlight === "radio2" ? "highlight-on" : "highlight-off"}>
-          <input className="experience-input" type='radio' value='SARA' name='radio'  id='radio2' onClick={handleExperience}
-          />
-          <label className="experience-label" for='radio2'>SARA</label>
-        </div>
+        {radioSelector}
+
+        {/* Custom radio select for education */}
         <div className="experience-select" id={highlight === "radio3" ? "highlight-on" : "highlight-off"}>
-          <input className="experience-input" type='radio' value='Molex' name='radio'  id='radio3' onClick={handleExperience}/>
-          <label className="experience-label" for='radio3'>Molex</label>
+          <input className="experience-input" type='radio' value='Education' name='radio' id='radio3' onClick={handleExperience}/>
+          <label className="experience-label" for='radio1'>Education</label>
         </div>
       </div>
 
       <div key={Math.random()} className="experience-info-blurb" >
-        {/* <div className="experience-company-info"> {company} </div>  */}
+        
+
+        
         <div className="experience-position-info"> {position} </div>
         <div className="experience-date-info"> {dateStr} </div>
         <ul className="experience-description-info"> 

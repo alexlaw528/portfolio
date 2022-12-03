@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedLetters from '../AnimatedLetters/AnimatedLetters.js';
 import './Home.scss';
+import headShot from '../../assets/images/alexLaw.png'
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
@@ -48,6 +49,8 @@ const Home = () => {
               strArray={jobArray2}
               idx={30} 
             />
+            {/* <img src={headShot} alt="headshot"/> */}
+
           </h1>
           <h2> Engineer / Designer / Developer </h2>
           <Link to="/contact" className="flat-button">CONTACT ME</Link>

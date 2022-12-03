@@ -4,6 +4,7 @@ import Home from '../Home/Home.js';
 import Experience from '../Experience/Experience.js';
 import Projects from '../Projects/Projects.js';
 import Contact from '../Contact/Contact.js';
+import Sidebar from '../Sidebar/Sidebar.js';
 
 
 const Layout = () => {
@@ -15,6 +16,7 @@ const Layout = () => {
           <Experience />
           <Projects />
           <Contact />
+          <Sidebar />
         </div>
       </div>
   )

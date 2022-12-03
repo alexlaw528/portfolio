@@ -25,5 +25,13 @@ module.exports = [
     description: [
       "Utilized SolidWorks to develop 3D designs of complex multi-component mold tooling that reduced overall manufacturing time of Class I/II medical devices and created 2D drawings to communicate design/fabrication requirements to external vendors"
     ]
-  }
+  },
+  // {
+  //   company: "Education",
+  //   position: "Education",
+  //   dateStr: "2020 - 2022",
+  //   description: [
+  //     "Utilized SolidWorks to develop 3D designs of complex multi-component mold tooling that reduced overall manufacturing time of Class I/II medical devices and created 2D drawings to communicate design/fabrication requirements to external vendors"
+  //   ]
+  // }
 ];

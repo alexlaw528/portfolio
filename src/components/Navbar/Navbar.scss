@@ -1,7 +1,7 @@
 .nav-container{
   background-color: rgb(0,39,59);
   box-shadow: 0px 1px 5px black;
-  height: 60px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,8 @@
   left: 0;
   width: 100%;
   z-index: 3;
-
+  opacity: 0.8;
+  font-family: 'Hind Siliguri', sans-serif;
 }
 
 .nav-bar-link {
@@ -30,7 +31,7 @@
  {
   display: flex;
   list-style: none;
-  font-size: 17px;
+  font-size: 1.125rem;
 }
 
 #nav-logo { 
@@ -46,7 +47,7 @@
 
 .section-links > li{
   margin-left: 3rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .section-links > li > a {
