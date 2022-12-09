@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './ExperienceToC.scss';
 const experienceInfo = require('../../../assets/experienceInfo.js');
 
-const ExperienceToC = (props) => {
+const ExperienceToC = ({edState, showEdState, removeEdState}) => {
 
   const [ company, setCompany ] = useState(experienceInfo[0].company);
   const [ position, setPosition ] = useState(experienceInfo[0].position);
@@ -14,7 +14,10 @@ const ExperienceToC = (props) => {
   function handleExperience(e) {
     setAnimate(!animate);
     setHighlight(e.target.id);
+    console.log('handleexp');
+
     for (const key of experienceInfo) {
+      console.log('exp loop');
       const { company, position, dateStr, description } = key;
       if (e.target.value === company) {
         setCompany(company);
@@ -23,6 +26,15 @@ const ExperienceToC = (props) => {
         setDescription(description);
       }
     }
+
+    console.log(e.target.value === "Education");
+    if (e.target.value !== "Education") {
+      console.log('position', position);
+      removeEdState();
+    } else {
+      showEdState();
+    }
+    console.log("edState", edState);
   }
 
   const descriptionBullet = description.map((val, index) =>
@@ -45,7 +57,9 @@ const ExperienceToC = (props) => {
       </div>
 
       <div key={Math.random()} className="experience-info-blurb" >
-        { company === "Education" ? 
+        { 
+        company === "Education" 
+        ? 
           <>
             {
               position.map((ele, idx) => 
@@ -72,14 +86,6 @@ const ExperienceToC = (props) => {
             </ul>
           </>
         }
-          {/* <div className="experience-position-info"> {position} </div>
-          <div className="experience-date-info"> {dateStr} </div>
-          <ul className="experience-description-info"> 
-            {descriptionBullet} 
-          </ul> */}
-        
-
-        
       </div>
     </div>
   )

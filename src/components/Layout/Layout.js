@@ -1,4 +1,5 @@
 import './Layout.scss';
+import { useState } from 'react';
 import Navbar from '../Navbar/Navbar.js';
 import Home from '../Home/Home.js';
 import Experience from '../Experience/Experience.js';
@@ -8,12 +9,21 @@ import Sidebar from '../Sidebar/Sidebar.js';
 
 
 const Layout = () => {
+
+  // const [edState, setEdState] = useState(false);
+
   return (
       <div className='page'>
         <div class="main-nav">
-          <Navbar />
+          <Navbar 
+            // showEdState = {() => setEdState(true)}
+            />
           <Home />
-          <Experience />
+          <Experience 
+            // edState = {edState}
+            // showEdState = {() => setEdState(true)}
+            // removeEdState = {() => setEdState(false)}/>
+          />
           <Projects />
           <Contact />
           <Sidebar />
