@@ -29,7 +29,7 @@ module.exports = [
   {
     company: "Education",
     position: ["University of California, Los Angeles", "University of California, Irvine"],
-    dateStr: ["MS Mechancial Engineering", "BS Mechanical Engineering"],
+    dateStr: ["MS Mechanical Engineering", "BS Mechanical Engineering"],
     description: ["August 2020 - June 2022", "October 2012 - June 2016"]
   }
 ];
