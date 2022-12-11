@@ -21,7 +21,7 @@ const FeaturedProject = () => {
 
           <div class="featured-project-content">
             {/* <h5 class="card-title" id="featured-card-title">{featuredProject.project}</h5> */}
-            <p class="card-text" id="featured-card-description">Vue frontend prototyping tool used for fast prototyping and project initialization</p>
+            <p class="card-text" id="featured-card-description">Vue development tool  for fast prototyping and project initialization</p>
             <div id="featured-project-tech-used">
               {
                 featuredProject.tech.map((tech, techIdx) => 

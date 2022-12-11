@@ -1,63 +1,63 @@
 import './Navbar.scss';
-import { Link, NavLink } from 'react-router-dom'
-// import LogoS from '../../assets/images/logo-s.png';
-// import LogoSubtitle from '../../assets/images/logo_sub.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faHome, 
-  faUser, 
-  faEnvelope, 
-  faRocket,
-} from '@fortawesome/free-solid-svg-icons';
-import {
-  faLinkedin,
-  faGithub,
-} from '@fortawesome/free-brands-svg-icons'
+import al_nav_logo2 from "../../assets/images/al_nav_logo2.png"
+const experienceInfo = require('../../assets/experienceInfo.js');
 
+const experience =  experienceInfo[0];
+const education = experienceInfo[experienceInfo.length - 1];
 
-const Sidebar = () => {
+const NavBar = ({
+  animate,
+  setCompany,
+  setPosition,
+  setDateStr,
+  setDescription,
+  setAnimate,
+  setHighlight
+}) => {
 
+  const handleExperienceDetails = (type) => {
+    const expDetails = (type === "experience") ? experience : education;
+    setAnimate(!animate);
+    setHighlight((type === "experience") ? "radio0" : `radio${experienceInfo.length - 1}`);
+    setCompany(expDetails.company);
+    setPosition(expDetails.position);
+    setDateStr(expDetails.dateStr);
+    setDescription(expDetails.description);
+  }
   return (
-    <div className="nav-bar">
-      <Link className='logo' to='/'>
-        {/* <img src={LogoS} alt="logo" />
-        <img className="sub-logo" src={LogoSubtitle} alt="logo" /> */}
-        <FontAwesomeIcon icon={faRocket} color="#4d4d4e" className="sub-logo"/>
-      </Link>
-      <nav>
-        <NavLink exact="true" activeclassname="active" to="/">
-          <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
-        </NavLink>
-        <NavLink exact="true" activeclassname="active" className="about-link" to="/about">
-          <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
-        </NavLink>
-        <NavLink exact="true" activeclassname="active" className="contact-link" to="/contact">
-          <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
-        </NavLink>
-      </nav>
-      <ul>
-        <li>
-          <a 
-            target="_blank" 
-            rel='noreferrer' 
-            href='https://www.linkedin.com/in/alexlaw528/'
-          >
-            <FontAwesomeIcon icon={ faLinkedin } color="#4d4de"/>
-          </a>
-        </li>
-        <li>
-          <a 
-            target="_blank" 
-            rel='noreferrer' 
-            href='https://github.com/alexlaw528/'
-          >
-            <FontAwesomeIcon icon={ faGithub } color="#4d4de"/>
-          </a>
-        </li>
+    <div class="nav-container">
+      <ul className="nav-bar-link">
+          <li>
+            <a href="#nav-home" id="nav-home-logo">
+              <img id="nav-logo" src={al_nav_logo2} alt="logo"/>
+            </a>
+          </li>
+
+          <div className="section-links">
+            <li>
+              <a 
+                href="#nav-experience"
+                id="experience-link"
+                onClick={() => handleExperienceDetails("experience")}
+              >
+                Experience
+              </a>
+            </li>
+            <li><a href="#nav-projects">Projects</a></li>
+            <li><a href="#nav-contact">Contact</a></li>
+            <li>
+                <a 
+                  href="#nav-experience" 
+                  id = "education-link"
+                  onClick={() => handleExperienceDetails("education")}
+                >
+                  Education
+                </a>
+            </li>
+          </div>
       </ul>
     </div>
   )
-
 }
 
-export default Sidebar
+export default NavBar

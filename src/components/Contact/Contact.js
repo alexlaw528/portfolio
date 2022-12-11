@@ -4,7 +4,7 @@ import EmailForm from './EmailForm/EmailForm.js';
 
 const Contact = () => {
   return (
-    <div className="container contact-section">
+    <div className="container contact-section" id="nav-contact">
       <h1 className="contact-section-header"> 
         Contact Me
       </h1>

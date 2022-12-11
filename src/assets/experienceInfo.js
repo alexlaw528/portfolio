@@ -25,5 +25,11 @@ module.exports = [
     description: [
       "Utilized SolidWorks to develop 3D designs of complex multi-component mold tooling that reduced overall manufacturing time of Class I/II medical devices and created 2D drawings to communicate design/fabrication requirements to external vendors"
     ]
+  },
+  {
+    company: "Education",
+    position: ["University of California, Los Angeles", "University of California, Irvine"],
+    dateStr: ["MS Mechanical Engineering", "BS Mechanical Engineering"],
+    description: ["August 2020 - June 2022", "October 2012 - June 2016"]
   }
 ];
