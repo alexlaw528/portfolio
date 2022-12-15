@@ -32,7 +32,6 @@ const NavBar = ({
               <img id="nav-logo" src={al_nav_logo2} alt="logo"/>
             </a>
           </li>
-
           <div className="section-links">
             <li>
               <a 
@@ -43,8 +42,6 @@ const NavBar = ({
                 Experience
               </a>
             </li>
-            <li><a href="#nav-projects">Projects</a></li>
-            <li><a href="#nav-contact">Contact</a></li>
             <li>
                 <a 
                   href="#nav-experience" 
@@ -54,6 +51,8 @@ const NavBar = ({
                   Education
                 </a>
             </li>
+            <li><a href="#nav-projects">Projects</a></li>
+            <li><a href="#nav-contact">Contact</a></li>
           </div>
       </ul>
     </div>

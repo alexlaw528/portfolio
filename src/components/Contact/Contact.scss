@@ -1,6 +1,20 @@
 .contact-section {
-  color: white;
-  background-color: rgb(20, 64, 70);
-  border-radius: 1rem;
-  padding: 1.5rem; 
+  // height: 100vh;
+  margin-bottom: 10rem;
+}
+
+.contact-my-info { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-header {
+  color: rgb(195, 208, 243);
+}
+
+.contact-number,
+.contact-email {
+  color: rgb(44, 209, 181);
+  margin: 0.25em;
 }

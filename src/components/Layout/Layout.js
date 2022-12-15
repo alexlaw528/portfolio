@@ -6,6 +6,7 @@ import Experience from '../Experience/Experience.js';
 import Projects from '../Projects/Projects.js';
 import Contact from '../Contact/Contact.js';
 import Sidebar from '../Sidebar/Sidebar.js';
+import Footer from '../Footer/Footer.js';
 const experienceInfo = require('../../assets/experienceInfo.js');
 
 const Layout = () => {
@@ -63,7 +64,8 @@ const Layout = () => {
           />
           <Projects />
           <Contact />
-          <Sidebar />
+          <Sidebar /> 
+          <Footer />
         </div>
       </div>
   )
