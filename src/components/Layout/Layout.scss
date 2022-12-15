@@ -1,8 +1,11 @@
+.main-nav {
+  position: relative;
+}
+
 .test-link {
   color: white;
   font-size: 2rem;
 }
-
 
 .page {
   height: 100vh;
@@ -10,7 +13,8 @@
   grid-auto-rows: auto;
 
   /* CSS Smooth Scroll */
-  overflow-y: scroll;
+  // overflow-y: scroll;
+  overflow-y: auto;
   scroll-behavior: smooth;
 }
 
@@ -43,7 +47,6 @@
   min-height: 60vh;
   margin: 0 auto;
   font-family: 'Hind Siliguri', sans-serif;
-
 }
 
 .section-header {

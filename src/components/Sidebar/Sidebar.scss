@@ -1,11 +1,14 @@
 .sidebar{
-  position: fixed;
+  position: sticky;
   display: flex;
   flex-direction: column;
-  bottom: 3rem;
+  align-items: center;
+  bottom: 5rem;
   left: 3rem;
-  
+  width: 5rem;
+  margin-top: -15rem;
 }
+
 
 // .sidebar:after {
 //   content: "";
