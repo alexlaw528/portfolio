@@ -2,7 +2,7 @@ import React from "react";
 import './Experience.scss';
 import ExperienceToC from './ExperienceToC/ExperienceToC.js'
 
-const Experience = React.memo(({
+const Experience = ({
   company, 
   setCompany, 
   position,
@@ -40,6 +40,6 @@ const Experience = React.memo(({
         </div>
       </div>
   )
-})
+}
 
 export default Experience

@@ -2,19 +2,12 @@ import React, { useState } from "react";
 import './ExperienceToC.scss';
 const experienceInfo = require('../../../assets/experienceInfo.js');
 
-const ExperienceToC = React.memo(({
+const ExperienceToC = ({
   company, 
-  // setCompany, 
   position,
-  // setPosition,
   dateStr,
-  // setDateStr,
   description,
-  // setDescription,
-  // animate,
-  // setAnimate,
   highlight,
-  // setHighlight,
   handleExperience
 }) => {
 
@@ -38,7 +31,7 @@ const ExperienceToC = React.memo(({
       </div>
 
       <div 
-        // key={Math.random()} 
+        // key={Math.random()}  // WHY DOES THIS CAUSE RE-RENDER
         className="experience-info-blurb" >
         { 
         company === "Education" 
@@ -72,6 +65,6 @@ const ExperienceToC = React.memo(({
       </div>
     </div>
   )
-})
+}
 
 export default ExperienceToC

@@ -11,7 +11,7 @@ import Footer from '../Footer/Footer.js';
 import BackToTopButton from '../BackToTopButton/BackToTopButton';
 const experienceInfo = require('../../assets/experienceInfo.js');
 
-const Layout = React.memo(() => {
+const Layout = () => {
   const [ company, setCompany ] = useState(experienceInfo[0].company);
   const [ position, setPosition ] = useState(experienceInfo[0].position);
   const [ dateStr, setDateStr ] = useState(experienceInfo[0].dateStr);
@@ -94,6 +94,6 @@ const Layout = React.memo(() => {
         </div>
       </div>
   )
-})
+}
 
 export default Layout
