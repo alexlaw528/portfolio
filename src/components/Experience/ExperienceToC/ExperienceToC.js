@@ -2,45 +2,21 @@ import React, { useState } from "react";
 import './ExperienceToC.scss';
 const experienceInfo = require('../../../assets/experienceInfo.js');
 
-const ExperienceToC = ({
+const ExperienceToC = React.memo(({
   company, 
-  setCompany, 
+  // setCompany, 
   position,
-  setPosition,
+  // setPosition,
   dateStr,
-  setDateStr,
+  // setDateStr,
   description,
-  setDescription,
-  animate,
-  setAnimate,
+  // setDescription,
+  // animate,
+  // setAnimate,
   highlight,
-  setHighlight,
+  // setHighlight,
   handleExperience
 }) => {
-
-  // const [ company, setCompany ] = useState(experienceInfo[0].company);
-  // const [ position, setPosition ] = useState(experienceInfo[0].position);
-  // const [ dateStr, setDateStr ] = useState(experienceInfo[0].dateStr);
-  // const [ description, setDescription ] = useState(experienceInfo[0].description);
-  // const [ animate, setAnimate ] = useState(true);
-  // const [ highlight, setHighlight ] = useState('radio0');
-
-  // function handleExperience(e) {
-  //   setAnimate(!animate);
-  //   setHighlight(e.target.id);
-  //   console.log('handleexp');
-
-  //   for (const key of experienceInfo) {
-  //     console.log('exp loop');
-  //     const { company, position, dateStr, description } = key;
-  //     if (e.target.value === company) {
-  //       setCompany(company);
-  //       setPosition(position);
-  //       setDateStr(dateStr);
-  //       setDescription(description);
-  //     }
-  //   }
-  // }
 
   const descriptionBullet = description.map((val, index) =>
     <li className="experience-description-info-li" key = {index}>
@@ -61,7 +37,9 @@ const ExperienceToC = ({
         {radioSelector}
       </div>
 
-      <div key={Math.random()} className="experience-info-blurb" >
+      <div 
+        // key={Math.random()} 
+        className="experience-info-blurb" >
         { 
         company === "Education" 
         ? 
@@ -94,6 +72,6 @@ const ExperienceToC = ({
       </div>
     </div>
   )
-}
+})
 
 export default ExperienceToC

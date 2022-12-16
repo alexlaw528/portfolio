@@ -1,3 +1,4 @@
+import React from 'react'
 import './Navbar.scss';
 import al_nav_logo2 from "../../assets/images/al_nav_logo2.png"
 const experienceInfo = require('../../assets/experienceInfo.js');
@@ -12,8 +13,10 @@ const NavBar = ({
   setDateStr,
   setDescription,
   setAnimate,
-  setHighlight
+  setHighlight,
+  navBarVisible
 }) => {
+
 
   const handleExperienceDetails = (type) => {
     const expDetails = (type === "experience") ? experience : education;
@@ -25,7 +28,7 @@ const NavBar = ({
     setDescription(expDetails.description);
   }
   return (
-    <div class="nav-container">
+    <div class="nav-container" id={navBarVisible ? "navbar-show" : "navbar-hidden"}>
       <ul className="nav-bar-link">
           <li>
             <a href="#nav-home" id="nav-home-logo">
