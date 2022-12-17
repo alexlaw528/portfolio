@@ -1,7 +1,7 @@
 .nav-container{
   position: fixed;
   background-color: rgb(0,39,59);
-  box-shadow: 0px 1px 5px black;
+  // box-shadow: 0px 1px 5px black;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -10,7 +10,7 @@
   left: 0;
   width: 100%;
   z-index: 999;
-  opacity: 0.8;
+  // opacity: 0.8;
   font-family: 'Hind Siliguri', sans-serif;
 }
 
@@ -18,8 +18,8 @@
   transform: translateY(0px);
   visibility: visible;
   transition: transform .5s ease-out, visibility .5s;
-
 }
+
 #navbar-hidden{
   transform: translateY(-100px);
   visibility: hidden;
@@ -33,6 +33,7 @@
   min-height: 50px !important;
   max-width: 1140px;
   width: 100%;
+  padding: 0 1rem 0 1rem;
   margin: 0;
   justify-content: space-between;
   padding-left: 0;
@@ -48,8 +49,10 @@
 
 #nav-logo { 
   // object-fit: contain;
+  margin-left: 10px;
+  margin-top: 10px;
   transition: 0.3s ease-in-out;
-  width: 4rem;
+  height: 60px;
 }
 
 #nav-logo:hover{
@@ -72,3 +75,94 @@
   color: white;
 }
 
+.nav-hamburger {
+  position: absolute;
+  visibility: hidden;
+  background: none;
+  top: 20px;
+  padding: 0;
+  color: white;
+  border-style: none;
+  right: 2rem;
+}
+
+.nav-hamburger:focus {
+  outline: none;
+  box-shadow: none;
+  color: white;
+}
+
+.nav-hamburger:hover {
+  color: green;
+}
+
+@media (max-width: 650px) {
+  .nav-container,
+  .section-links {
+    flex-direction: column;
+  }
+
+  @keyframes slideInFromTop {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  #section-links-fullscreen {
+    display: none;
+  }
+
+  .section-links {
+    position: absolute;
+    top: 80px;
+    align-self: center;
+    background-color: rgb(0,39,59);
+    width: 100%;
+    text-align: center;
+    // animation: 1s ease-out 0s 1 slideInFromTop;
+    // z-index:0;
+    padding: 10px;
+  }
+
+  .section-links > * {
+    padding: 5px;
+  }
+
+  .main-logo-link {
+    align-self: flex-start;
+  }
+
+  .nav-container {
+    justify-content: center;
+  }
+
+  #nav-logo {
+    margin-top: calc((80px - 60px)/2);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+
+  .nav-bar-link{
+    flex-direction: column;
+    padding: 0;
+    transition: transform 1s;
+    z-index: 1;
+
+  }
+
+  .nav-hamburger {
+    visibility: visible;
+  }
+
+  #hamburger-hidden {
+    display: none;
+  }
+
+  #navbar-hidden{
+    transform: translateY(-260px);
+  }
+}

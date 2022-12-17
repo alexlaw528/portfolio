@@ -1,6 +1,6 @@
 import './Layout.scss';
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Navbar from '../Navbar/Navbar.js';
 import Home from '../Home/Home.js';
 import Experience from '../Experience/Experience.js';
@@ -21,25 +21,24 @@ const Layout = () => {
   const [ navBarVisible, setNavBarVisible ] = useState(true);
   const [ currentScrollY, setCurrentScrollY ] = useState(0);
 
-  function handleScroll(e) {
-    console.log('handleScroll');
-    // e.preventDefault();
-    // need to add a debounce() to prevent overloading
+  
+  function handleScroll(event) {
     const scroller = document.querySelector(".page");
 
-    scroller.addEventListener("scroll", (event) => {
+    // need to add a debounce() to prevent overloading
+    const scrollEvent = (event) => {
       let currScrollPos = scroller.scrollTop;
       if (currScrollPos > currentScrollY) {
-        console.log('scrolling down')
         setNavBarVisible(false);
       } else {
-        console.log('scrollling up')
         setNavBarVisible(true);
       }
       setCurrentScrollY(currScrollPos);
-    })
+    };
+    
+    scroller.addEventListener("scroll", scrollEvent);
   }
-  
+
   function handleExperience(e) {
     setAnimate(!animate);
     setHighlight(e.target.id);
@@ -58,7 +57,10 @@ const Layout = () => {
   }
 
   return (
-      <div onScroll={handleScroll} className='page'>
+      <div 
+        onScroll={handleScroll} 
+        className='page'
+      >
         <div class="main-nav">
             <Navbar 
               navBarVisible={navBarVisible}
