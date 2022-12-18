@@ -4,43 +4,12 @@ const experienceInfo = require('../../../assets/experienceInfo.js');
 
 const ExperienceToC = ({
   company, 
-  setCompany, 
   position,
-  setPosition,
   dateStr,
-  setDateStr,
   description,
-  setDescription,
-  animate,
-  setAnimate,
   highlight,
-  setHighlight,
   handleExperience
 }) => {
-
-  // const [ company, setCompany ] = useState(experienceInfo[0].company);
-  // const [ position, setPosition ] = useState(experienceInfo[0].position);
-  // const [ dateStr, setDateStr ] = useState(experienceInfo[0].dateStr);
-  // const [ description, setDescription ] = useState(experienceInfo[0].description);
-  // const [ animate, setAnimate ] = useState(true);
-  // const [ highlight, setHighlight ] = useState('radio0');
-
-  // function handleExperience(e) {
-  //   setAnimate(!animate);
-  //   setHighlight(e.target.id);
-  //   console.log('handleexp');
-
-  //   for (const key of experienceInfo) {
-  //     console.log('exp loop');
-  //     const { company, position, dateStr, description } = key;
-  //     if (e.target.value === company) {
-  //       setCompany(company);
-  //       setPosition(position);
-  //       setDateStr(dateStr);
-  //       setDescription(description);
-  //     }
-  //   }
-  // }
 
   const descriptionBullet = description.map((val, index) =>
     <li className="experience-description-info-li" key = {index}>
@@ -61,7 +30,9 @@ const ExperienceToC = ({
         {radioSelector}
       </div>
 
-      <div key={Math.random()} className="experience-info-blurb" >
+      <div 
+        // key={Math.random()}  // WHY DOES THIS CAUSE RE-RENDER
+        className="experience-info-blurb" >
         { 
         company === "Education" 
         ? 

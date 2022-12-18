@@ -24,8 +24,14 @@ const Home = () => {
 
 
   return (
-    <div className="home-page-container">
-      <div className="container home-page" id="nav-home">
+    <div 
+      className="home-page-container"
+      id="nav-home"
+    >
+      <div 
+        className="container home-page" 
+        // id="nav-home"
+      >
         <div className="text-zone">
           <h1>
             <AnimatedLetters 
@@ -53,7 +59,9 @@ const Home = () => {
 
           </h1>
           <h2> Engineer / Designer / Developer </h2>
-          <Link to="/contact" className="flat-button">CONTACT ME</Link>
+          {/* <Link to="/contact" className="flat-button">CONTACT ME</Link> */}
+          <a href="#nav-contact" className="flat-button">CONTACT ME</a>
+
         </div>
       </div>
     </div>

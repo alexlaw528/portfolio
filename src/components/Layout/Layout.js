@@ -1,4 +1,5 @@
 import './Layout.scss';
+import React from 'react';
 import { useState } from 'react';
 import Navbar from '../Navbar/Navbar.js';
 import Home from '../Home/Home.js';
@@ -7,6 +8,7 @@ import Projects from '../Projects/Projects.js';
 import Contact from '../Contact/Contact.js';
 import Sidebar from '../Sidebar/Sidebar.js';
 import Footer from '../Footer/Footer.js';
+import BackToTopButton from '../BackToTopButton/BackToTopButton';
 const experienceInfo = require('../../assets/experienceInfo.js');
 
 const Layout = () => {
@@ -16,6 +18,26 @@ const Layout = () => {
   const [ description, setDescription ] = useState(experienceInfo[0].description);
   const [ animate, setAnimate ] = useState(true);
   const [ highlight, setHighlight ] = useState('radio0');
+  const [ navBarVisible, setNavBarVisible ] = useState(true);
+  const [ currentScrollY, setCurrentScrollY ] = useState(0);
+
+  
+  function handleScroll(event) {
+    const scroller = document.querySelector(".page");
+
+    // need to add a debounce() to prevent overloading
+    const scrollEvent = (event) => {
+      let currScrollPos = scroller.scrollTop;
+      if (currScrollPos > currentScrollY) {
+        setNavBarVisible(false);
+      } else {
+        setNavBarVisible(true);
+      }
+      setCurrentScrollY(currScrollPos);
+    };
+    
+    scroller.addEventListener("scroll", scrollEvent);
+  }
 
   function handleExperience(e) {
     setAnimate(!animate);
@@ -35,17 +57,21 @@ const Layout = () => {
   }
 
   return (
-      <div className='page'>
+      <div 
+        onScroll={handleScroll} 
+        className='page'
+      >
         <div class="main-nav">
-          <Navbar 
-            animate = {animate}
-            setAnimate = {setAnimate}
-            setHighlight = {setHighlight}
-            setCompany = {setCompany}
-            setPosition = {setPosition}
-            setDateStr = {setDateStr}
-            setDescription = {setDescription}
-          />
+            <Navbar 
+              navBarVisible={navBarVisible}
+              animate = {animate}
+              setAnimate = {setAnimate}
+              setHighlight = {setHighlight}
+              setCompany = {setCompany}
+              setPosition = {setPosition}
+              setDateStr = {setDateStr}
+              setDescription = {setDescription}
+            />
           <Home />
           <Experience 
             company = {company}
@@ -65,6 +91,7 @@ const Layout = () => {
           <Projects />
           <Contact />
           <Sidebar /> 
+          <BackToTopButton />
           <Footer />
         </div>
       </div>
