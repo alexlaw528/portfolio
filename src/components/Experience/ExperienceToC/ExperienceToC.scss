@@ -1,6 +1,6 @@
 .experience-toc {
   display: grid;
-  grid-template-columns: 1fr 4fr
+  grid-template-columns: 1fr 4fr;
 }
 
 .experience-list {
@@ -95,7 +95,7 @@
 
 
 .experience-input {
-  visibility:hidden;
+  display: none;
 }
 
 label {
@@ -107,4 +107,41 @@ label {
   background-color: rgb(15, 31, 55);
   border-left-color: rgb(44,209,181);
   transition: 1s;
+}
+
+@media (max-width: 600px) {
+  .experience-toc {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .experience-list {
+    flex-direction: row;
+    // justify-content: center;
+  }
+
+  .experience-list .experience-select {
+    border-left: none;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(135,136,142);
+  }
+
+  .experience-select:hover {
+    color: rgb(44,209,181);
+    background-color: rgb(15, 31, 55);
+    border-bottom-color: rgb(44,209,181);
+    transition: 1s;
+  }
+
+  .experience-info-blurb {
+    max-width: 80vw;
+  }
+
+  // .experience-position-info,
+  // .experience-date-info,
+  // .experience-description-info {
+  //   text-align: center;
+  // }
+
 }

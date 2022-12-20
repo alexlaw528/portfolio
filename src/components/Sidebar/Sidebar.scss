@@ -36,3 +36,9 @@
   transform: translateY(-5px);
 }
 
+@media (max-width: 1350px) {
+  .sidebar{
+    display: none;
+  }
+}
+
