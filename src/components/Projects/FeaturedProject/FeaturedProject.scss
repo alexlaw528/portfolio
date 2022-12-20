@@ -1,0 +1,118 @@
+.featured-card-block { 
+  display: flex;
+  padding: 0 10%;
+  font-family: sans-serif;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+
+.featured-heading-block {
+  align-self: flex-start;
+
+  .featured-heading {
+      color: rgb(44,209,181);
+      font-weight: 400;
+      font-size: 1.25rem;
+      letter-spacing: 3px;
+      margin-bottom: 0.75rem;
+  }
+}
+
+.featured-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.featured-image-wrapper > #featured-card-image{
+  transition: all 0.25s ease-in-out;
+}
+
+.featured-image-wrapper > .featured-project-content {
+  position: absolute;
+  inset: 0;
+  font-size: 2rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+
+.featured-image-wrapper > .featured-bg{
+  position: absolute;
+  inset: 0;
+  font-size: 2rem;
+  padding: 1rem;
+  background: rgb(67, 67, 69);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.featured-image-wrapper > #featured-card-image,
+.featured-image-wrapper > .featured-project-content,
+.featured-image-wrapper > .featured-bg {
+  transition: 400ms ease-in-out ;
+}
+
+.featured-image-wrapper > .featured-project-content {
+  transform: translateY(-100%);
+  // opacity:0;
+}
+
+.featured-image-wrapper > .featured-bg{
+  opacity: 0;
+}
+
+.featured-image-wrapper:hover > .featured-bg{
+  opacity: .75;
+}
+
+.featured-image-wrapper:hover > div {
+  transform: translateY(0);
+  // opacity: .75;
+}
+
+.featured-project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: end;
+}
+
+#featured-card-title{
+  color: rgb(44,209,181);
+  font-size: 3rem;
+}
+
+#featured-card-description{
+  color: rgb(195, 208, 243);
+  font-size: 1.75rem;
+  font-weight: 350;
+  margin-bottom: 0px;
+}
+
+.featured-project-tech-item {
+  color: rgb(135,136,142);
+  font-size: 1.25rem;
+  padding-right: 1rem;
+  font-weight: 350;
+}
+
+.featured-project-links {
+  font-size: 1.5rem;
+  color: white;
+  transition: all 0.25s;
+  padding-right: 1rem;
+}
+
+.featured-project-links:hover {
+  color: rgb(44,209,181);
+}
+
+@media (max-width: 600px) {
+
+
+}

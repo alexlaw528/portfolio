@@ -1,66 +1,69 @@
 import React, { useState } from "react";
 import './ExperienceToC.scss';
-let experienceInfo = require('../../../assets/experienceInfo.js');
-const ExperienceToC = (props) => {
-  // const [ experienceSelect, setExperienceSelect ] = useState('test');
-  const [ company, setCompany ] = useState('');
-  const [ position, setPosition ] = useState('');
-  const [ dateStr, setDateStr ] = useState('');
-  const [ description, setDescription ] = useState([]);
+const experienceInfo = require('../../../assets/experienceInfo.js');
 
-
-
-
-
-  const handleExperience = (e) => {
-    // e.preventDefault();
-    console.log('handleExperience');
-    console.log(e.target.value);
-    // setExperienceSelect(e.target.value);
-    // console.log(experienceInfo);
-    
-    for (const key of experienceInfo) {
-      const { company, position, dateStr, description } = key;
-      if (e.target.value === company) {
-        setCompany(company);
-        setPosition(position);
-        setDateStr(dateStr);
-        setDescription(description);
-      }
-    }
-  }
+const ExperienceToC = ({
+  company, 
+  position,
+  dateStr,
+  description,
+  highlight,
+  handleExperience
+}) => {
 
   const descriptionBullet = description.map((val, index) =>
-    <li key = {index}>
-      {val}
+    <li className="experience-description-info-li" key = {index}>
+           {val}
     </li>
   )
 
+  const radioSelector = experienceInfo.map((experience, index) => 
+    <div className="experience-select" id={highlight === `radio${index}` ? "highlight-on" : "highlight-off"}>
+      <input className="experience-input" type='radio' value={experience.company} name='radio' id={`radio${index}`} onClick={handleExperience}/>
+      <label className="experience-label" for={`radio${index}`}>{experience.company}</label>
+    </div>
+  )
+
   return (
-    <>
-      <ul className="experience-list">
-        <li className="list1">
-          <input type='radio' value='OverVue' name='radio' id='radio1' onClick={handleExperience}/>
-          <label for='radio1'>OverVue</label>
-        </li>
-        <li>
-          <input type='radio' value='SARA' name='radio'  id='radio2' onClick={handleExperience}/>
-          <label for='radio2'>SARA</label>
-        </li>
-        <li>
-          <input type='radio' value='Molex' name='radio'  id='radio3' onClick={handleExperience}/>
-          <label for='radio3'>Molex</label>
-        </li>
-      </ul>
-      <div className="experience-info-blurb">
-        <h1> {company} </h1>
-        <h1> {position} </h1>
-        <h1> {dateStr} </h1>
-        <ul> 
-          {descriptionBullet} 
-        </ul>
+    <div className="experience-toc">
+      <div className="experience-list">
+        {radioSelector}
       </div>
-    </>
+
+      <div 
+        // key={Math.random()}  // WHY DOES THIS CAUSE RE-RENDER
+        className="experience-info-blurb" >
+        { 
+        company === "Education" 
+        ? 
+          <>
+            {
+              position.map((ele, idx) => 
+                <>
+                  <div className="experience-position-info"> {ele} </div>
+                  <div className="experience-date-info"> {dateStr[idx]} </div>
+                  <ul className="experience-description-info"> 
+                    <li className="experience-description-info-li">
+                      {description[idx]}
+                     </li>
+                  </ul>
+                  <br/>
+                  <br/>
+                </>
+              )
+            }
+          </>
+          :
+          <>
+            <div className="experience-position-info"> {position} </div>
+            <div className="experience-date-info"> {dateStr} </div>
+            <ul className="experience-description-info"> 
+              {descriptionBullet} 
+            </ul>
+          </>
+        }
+      </div>
+    </div>
   )
 }
 

@@ -1,24 +1,147 @@
+.experience-toc {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
 .experience-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  color: white;
+  color: rgb(135,136,142);
+  justify-self: center;
+  padding: 0.75rem;
+  width: 100%;
+
+  .experience-select {
+    font-size: 1.25rem;
+    font-weight: 400;
+    border-left-style: solid;
+    border-left-width: 3px;
+    border-left-color: rgb(135,136,142);
+    justify-self: center;
+    padding: 0.5rem;
+    transition: 1s;
+  }
+
+  .experience-select:hover {
+    color: rgb(44,209,181);
+    background-color: rgb(15, 31, 55);
+    border-left-color: rgb(44,209,181);
+    transition: 1s;
+  }
+
+  label{
+    height: 0;
+  }
 }
 
 .experience-info-blurb {
   color: white;
+  animation: fadeIn .5s .25s backwards;
+
+
+  .experience-company-info {
+    color: #8d8d8d;
+    font-weight: 400;
+    font-size: 2rem;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+  }
+
+  .experience-position-info {
+    color: rgb(44,209,181);
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+  }
+
+  .experience-date-info {
+    color: #8d8d8d;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+  }
+
+  .experience-company-info,
+  .experience-position-info,
+  .experience-date-info {
+    padding-left: 40px;
+  }
+
+  .experience-description-info{
+    margin-top: 1rem;
+    list-style: none;
+    font-weight: 350;
+    letter-spacing: 1px;
+
+    .experience-description-info-li{
+      padding-left: 30px;
+      position: relative;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: rgb(195, 208, 243);
+    }
+    .experience-description-info-li::before {
+      content: "▷";
+      color: rgb(44,209,181);
+      font-size: 0.1 rem;
+      position: absolute;
+      left: 0;
+    }
+  }
 }
 
-li {
-  display: inline-block;
-  margin-right: 15px;
+
+.experience-input {
+  display: none;
 }
-input {
-  visibility:hidden;
-}
+
 label {
   cursor: pointer;
 }
-input:checked + label {
-  background: red;
+
+#highlight-on {
+  color: rgb(44,209,181);
+  background-color: rgb(15, 31, 55);
+  border-left-color: rgb(44,209,181);
+  transition: 1s;
+}
+
+@media (max-width: 600px) {
+  .experience-toc {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .experience-list {
+    flex-direction: row;
+    // justify-content: center;
+  }
+
+  .experience-list .experience-select {
+    border-left: none;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(135,136,142);
+  }
+
+  .experience-select:hover {
+    color: rgb(44,209,181);
+    background-color: rgb(15, 31, 55);
+    border-bottom-color: rgb(44,209,181);
+    transition: 1s;
+  }
+
+  .experience-info-blurb {
+    max-width: 80vw;
+  }
+
+  // .experience-position-info,
+  // .experience-date-info,
+  // .experience-description-info {
+  //   text-align: center;
+  // }
+
 }
