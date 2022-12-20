@@ -34,29 +34,33 @@ const Home = () => {
       >
         <div className="text-zone">
           <h1>
-            <AnimatedLetters 
-              letterClass={letterClass}
-              strArray={nameArray}
-              idx={15} 
-            />
-            &nbsp;
-            <AnimatedLetters 
-              letterClass={letterClass}
-              strArray={nameArray2}
-              idx={19} 
-            />
-            <br />
-            <AnimatedLetters letterClass={letterClass}
-              strArray={jobArray}
-              idx={22} 
-            />
-            &nbsp;
-            <AnimatedLetters letterClass={letterClass}
-              strArray={jobArray2}
-              idx={30} 
-            />
+            <div className="home-name-container">
+              <AnimatedLetters 
+                id="first-name"
+                letterClass={letterClass}
+                strArray={nameArray}
+                idx={15} 
+              />
+              &nbsp;
+              <AnimatedLetters 
+                id="last-name"
+                letterClass={letterClass}
+                strArray={nameArray2}
+                idx={19} 
+              />
+            </div>
+            <div className="home-occupation-container">
+              <AnimatedLetters letterClass={letterClass}
+                strArray={jobArray}
+                idx={22} 
+              />
+              <span className="occupation-space">&nbsp;</span>
+              <AnimatedLetters letterClass={letterClass}
+                strArray={jobArray2}
+                idx={30} 
+              />
             {/* <img src={headShot} alt="headshot"/> */}
-
+            </div>
           </h1>
           <h2> Engineer / Designer / Developer </h2>
           {/* <Link to="/contact" className="flat-button">CONTACT ME</Link> */}

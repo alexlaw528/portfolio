@@ -3,10 +3,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .home-page {
-
   h1 {
     color: rgb(195, 208, 243);
     font-size: 6rem;
@@ -41,6 +41,7 @@
   }
 }
 
+
 h2 {
   color: #8d8d8d;
   margin-top: 20px;
@@ -68,5 +69,23 @@ h2 {
   &:hover {
     background: rgb(44,209,181);
     color: #333;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .home-occupation-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .occupation-space {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .home-page h1{
+    font-size: 2.5rem;
   }
 }

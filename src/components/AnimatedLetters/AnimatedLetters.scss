@@ -22,3 +22,10 @@
     animation-delay: #{$i/10}s;
   }
 }
+
+@media (max-width: 400px) {
+  .text-animate-hover {
+    font-size: 75px;
+  }
+
+}
