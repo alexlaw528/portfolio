@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import './BackToTopButton.scss'
 import {
   faArrowUp
@@ -6,8 +6,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const BackToTopButton = () => {
-
-
 
   return (
     <div className="to-top-button"> 
