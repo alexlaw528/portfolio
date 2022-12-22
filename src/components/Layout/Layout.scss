@@ -11,7 +11,7 @@
   height: 100vh;
   display: grid;
   grid-auto-rows: auto;
-  margin: 0 3rem 0 3rem;
+  // margin: 0 3rem 0 3rem;
 
   /* CSS Smooth Scroll */
   // overflow-y: scroll;
@@ -46,7 +46,7 @@
 .container {
   width: 100%;
   min-height: 60vh;
-  margin: 0 auto;
+  margin: auto;
   font-family: 'Hind Siliguri', sans-serif;
   max-width: 1140px;
 }
@@ -55,7 +55,7 @@
   color: rgb(195,208,243);
   position: relative;
   margin-bottom: 2rem;
-
+  margin: 0 20px 2rem 20px;
   .section-header-text{
     background-color: #022c43;
     padding: 1.25rem;

@@ -1,3 +1,5 @@
+
+import React from "react";
 import './About.scss';
 import AnimatedLetters from '../AnimatedLetters/AnimatedLetters.js'
 
