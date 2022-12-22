@@ -32,12 +32,17 @@ module.exports = {
             loader: 'file-loader',
           },
         ],        
-      }
+      },
+      {
+        test: /\.(ico)$/,
+        use: 'file-loader?name=assets/[name].[ext]'
+      },
     ]
   },
   plugins: [new HtmlWebpackPlugin({
     title: 'Development',
-    template: 'index.html'
+    template: 'index.html',
+    favicon: './favicon-32x32.ico',
   })],
   devServer: {
     static: {
