@@ -1,9 +1,11 @@
 .home-page-container{
-  height: 75vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 3rem 3rem 3rem;
+
 }
 
 .home-page {
@@ -81,6 +83,12 @@ h2 {
 
   .occupation-space {
     display: none;
+  }
+
+  .home-page-container {
+    height: auto;
+    margin-bottom: 10rem;
+    margin-top: 10rem;
   }
 }
 
