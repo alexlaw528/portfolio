@@ -1,12 +1,10 @@
 const path = require("path")
-// const nodeExternals = require("webpack-node-externals")
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    // path: path.resolve(__dirname, 'build'),
-    path: __dirname + '/build',
+    path: path.resolve(__dirname, 'build'),
     filename: "bundle.js",
   },
   
@@ -28,16 +26,13 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader',],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',        
-      },
-      {
-        test: /\.(woff|woff2)$/,
-        use: {
-          loader: 'url-loader',
-        },
-      },
-      
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],        
+      }
     ]
   },
   plugins: [new HtmlWebpackPlugin({
@@ -45,12 +40,11 @@ module.exports = {
     template: 'index.html'
   })],
   devServer: {
-    historyApiFallback: true,
     static: {
-      publicPath: '/`',
-      directory: path.join(__dirname, 'build'),
+      publicPath: '/build`',
+      directory: path.resolve(__dirname, 'build')
     },
     compress: true,
-    port: 9000,
+    port: 8080,
   },
 };
