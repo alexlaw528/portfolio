@@ -109,7 +109,7 @@ label {
   transition: 1s;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .experience-toc {
     display: flex;
     flex-direction: column;
