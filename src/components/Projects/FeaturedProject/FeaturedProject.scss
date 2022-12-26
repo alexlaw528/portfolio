@@ -1,14 +1,15 @@
 .featured-card-block { 
   display: flex;
-  padding: 0 10%;
+  // padding: 0 10%;
   font-family: sans-serif;
   flex-direction: column;
   align-items: center;
   margin-bottom: 10vh;
+  width: 100%;
 }
 
 .featured-heading-block {
-  align-self: flex-start;
+  // align-self: flex-start;
 
   .featured-heading {
       color: rgb(44,209,181);
@@ -29,15 +30,23 @@
   transition: all 0.25s ease-in-out;
 }
 
+.featured-project-content,
+#featured-card-image {
+  width: 100%;
+}
+
 .featured-image-wrapper > .featured-project-content {
   position: absolute;
   inset: 0;
   font-size: 2rem;
-  padding: 1rem;
+  // padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
 
+.featured-project-content > * {
+  padding: 0 .5rem .5rem .5rem;
 }
 
 .featured-image-wrapper > .featured-bg{
@@ -112,7 +121,15 @@
   color: rgb(44,209,181);
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
+  .featured-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
 
-
+  #featured-card-description{
+    font-size: 1.5rem;
+  }
 }

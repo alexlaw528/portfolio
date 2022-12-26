@@ -11,7 +11,7 @@
   height: 100vh;
   display: grid;
   grid-auto-rows: auto;
-  // margin: 0 3rem 0 3rem;
+  margin: auto;
 
   /* CSS Smooth Scroll */
   // overflow-y: scroll;
@@ -75,6 +75,12 @@
   z-index: -2;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1140px) {
+  .container {
+    max-width: 75vw;
+  }
 
+  .section-header{
+    margin-bottom: 1rem;
+  }
 }
