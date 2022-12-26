@@ -1,3 +1,4 @@
+
 .projects-section-header{
   color: white;
 }
@@ -12,4 +13,12 @@
 
 .other-projects-section{
   padding: 0 5%;
+}
+
+@media screen and (max-width: 600px) {
+
+  .projects-section {
+    max-width: 75vw;
+
+  }
 }
