@@ -117,20 +117,21 @@ label {
 
   .experience-list {
     flex-direction: row;
+    overflow-x: scroll;
     // justify-content: center;
   }
 
   .experience-list .experience-select {
     border-left: none;
-    border-bottom-style: solid;
-    border-bottom-width: 3px;
-    border-bottom-color: rgb(135,136,142);
+    border-top-style: solid;
+    border-top-width: 3px;
+    border-top-color: rgb(135,136,142);
   }
 
   .experience-select:hover {
     color: rgb(44,209,181);
     background-color: rgb(15, 31, 55);
-    border-bottom-color: rgb(44,209,181);
+    border-top-color: rgb(44,209,181);
     transition: 1s;
   }
 

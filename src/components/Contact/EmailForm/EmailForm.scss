@@ -1,8 +1,10 @@
 .contact-form {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 5fr 1fr;
-  margin: 0 15vh 0 15vh;
-  min-width: 60vh;
+  margin: 0 5vw 0 5vw;
+  width: 100%;
+  justify-self: center;
+
   // min-height: 100%;
   position: relative;
 
