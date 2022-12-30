@@ -18,6 +18,7 @@ const EmailForm = () => {
     setEmailLoad(true);
 
     emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_API_KEY)
+    // emailjs.sendForm("portfolio_contact", "portfolio_contact_form", form.current, "hFm4S2wih4eQdf94k")
     .then((result) => {
         setEmailLoad(false);
         setInputName("");

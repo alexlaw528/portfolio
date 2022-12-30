@@ -32,7 +32,8 @@
   transition: background-color 0.5s ease;
   white-space: nowrap;
   background: transparent;
-
+  text-align: center;
+  display: block;
 
   &:hover {
     background-color: rgb(44,209,181);
