@@ -56,7 +56,9 @@ module.exports = {
       // 'process.env.REACT_APP_API_KEY': JSON.stringify(process.env.REACT_APP_API_KEY)
       // "process.env": dotenv.parsed
     }),
-    new Dotenv(),
+    new Dotenv({
+      systemvars: true
+    }),
 ],
   devServer: {
     static: {
