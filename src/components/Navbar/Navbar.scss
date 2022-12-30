@@ -96,7 +96,7 @@
   color: green;
 }
 
-@media screen and (max-width: 650px) {
+@media (max-width: 650px) {
   .nav-container,
   .section-links {
     flex-direction: column;
