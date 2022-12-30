@@ -4,6 +4,11 @@ import './EmailForm.scss';
 import emailjs from '@emailjs/browser';
 import PacmanLoader from "react-spinners/PacmanLoader";
 
+// Test to see if netlify will properly assign these values at build time
+const service_id = process.env.REACT_APP_SERVICE_ID;
+const template_id = process.env.REACT_APP_TEMPLATE_ID;
+const api_key = process.env.REACT_APP_API_KEY;
+
 const EmailForm = () => {
   const form = useRef();
   const [inputName, setInputName] = useState("");
@@ -17,8 +22,11 @@ const EmailForm = () => {
     e.preventDefault();
     setEmailLoad(true);
 
-    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_API_KEY)
+    
+    // emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_API_KEY)
+    
     // emailjs.sendForm("portfolio_contact", "portfolio_contact_form", form.current, "hFm4S2wih4eQdf94k")
+    emailjs.sendForm(service_id, template_id, form.current, api_key)
     .then((result) => {
         setEmailLoad(false);
         setInputName("");
