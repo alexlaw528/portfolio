@@ -1,5 +1,5 @@
 .contact-section {
-  max-width: 75vw;
+  width: 600px;
   margin-bottom: 10rem;
   display: flex;
   flex-direction: column;
@@ -20,4 +20,10 @@
 .contact-email {
   color: rgb(44, 209, 181);
   margin: 0.25em;
+}
+
+@media screen and (max-width: 600px) {
+  .contact-section {
+    max-width: 65vw;
+  }
 }
