@@ -38,7 +38,7 @@ const ProjectCard = () => {
 
   return ( 
     <section class="dark">
-      <div class="container py-4">
+      <div class="mainpage-section py-4">
         {projectCardList}
       </div>
     </section>

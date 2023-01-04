@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Contact = () => {
   return (
-    <div className="container contact-section" id="nav-contact">
+    <div className="mainpage-section contact-section" id="nav-contact">
       <h1 className="section-header"> 
         <span className="section-header-text"></span>
       </h1>

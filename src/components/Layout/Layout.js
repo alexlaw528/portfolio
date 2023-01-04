@@ -73,7 +73,7 @@ const Layout = () => {
               setDescription = {setDescription}
             />
           <Home />
-          <Experience 
+          {/* <Experience 
             company = {company}
             setCompany = {setCompany}
             position = {position}
@@ -92,7 +92,7 @@ const Layout = () => {
           <Contact />
           <Sidebar /> 
           <BackToTopButton />
-          <Footer />
+          <Footer /> */}
         </div>
       </div>
   )
