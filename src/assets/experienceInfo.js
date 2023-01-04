@@ -27,6 +27,7 @@ module.exports = [
     ]
   },
   {
+    // company: "Education",
     company: "Education",
     position: ["University of California, Los Angeles", "University of California, Irvine"],
     dateStr: ["MS Mechanical Engineering", "BS Mechanical Engineering"],

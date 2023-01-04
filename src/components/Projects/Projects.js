@@ -6,7 +6,7 @@ import FeaturedProject from './FeaturedProject/FeaturedProject.js';
 const Projects = () => {
 
   return (
-      <div className="container projects-section" id="nav-projects">
+      <div className="mainpage-section projects-section" id="nav-projects">
         <h1 className="section-header"><span className="section-header-text">Projects</span></h1>
         <FeaturedProject />
 

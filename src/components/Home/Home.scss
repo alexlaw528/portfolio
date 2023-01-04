@@ -1,99 +1,77 @@
-.home-page-container{
-  height: 100vh;
+.home {
+  // height: 100vh;
+  margin: 100px auto 100px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin: 0 3rem 3rem 3rem;
+  align-items: flex-start;
 
-}
-
-.home-page {
-  h1 {
+  &__header-container {
     color: rgb(195, 208, 243);
     font-size: 6rem;
     margin: 0;
-    font-family: 'Coolvetica';
+    font-family: 'Coolvetica','Calibri', 'Gill sans', sans-serif;
     font-weight: 400;
+  }
+  
+  &__animated-letters-container{
+    width: 100%;
+  }
 
-    &::before {
-      font-family: 'La Belle Aurore';
-      color: rgb(44,209,181);
-      font-size: 18px;
-      margin-top: -40px;
-      opacity: 0.6;
-    }
+  &__subtext {
+    color: #8d8d8d;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+  }
 
-    &::after {
-      font-family: 'La Belle Aurore';
-      color:  rgb(44,209,181);
-      font-size: 18px;
-      margin-top: 18px;
-      margin-left: 20px;
-      animation: fadeIn 1s 1.7s backwards;
-    }
+  &__contact-button {
+    color:  rgb(195, 208, 243);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 1px solid  rgb(44,209,181);
+    margin-top: 25px;
+    float: left;
+    white-space: nowrap;
 
-    img {
-      width: 32px;
-      margin-left: 20px;
-      opacity: 0;
-      height: auto;
-      animation: rotateIn 1s linear both;
+    &:hover {
+      background: rgb(44,209,181);
+      color: #333;
     }
+  } 
+
+  &__contact-button,
+  &__subtext {
+    animation: fadeIn .5s 4.5s backwards;
   }
 }
 
-
-h2 {
-  color: #8d8d8d;
-  margin-top: 20px;
-  font-weight: 400;
-  font-size: 14px;
-  font-family: sans-serif;
-  letter-spacing: 3px;
-  animation: fadeIn .5s 1s backwards;
-}
-
-.flat-button {
-  color:  rgb(195, 208, 243);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  font-family: sans-serif;
-  text-decoration: none;
-  padding: 10px 18px;
-  border: 1px solid  rgb(44,209,181);
-  margin-top: 25px;
-  float: left;
-  animation: fadeIn .5s 1s backwards;
-  white-space: nowrap;
-
-  &:hover {
-    background: rgb(44,209,181);
-    color: #333;
+@media screen and (max-width: 850px) {
+  .home__animated-letters-container {
+    font-size: 4.5rem;
   }
 }
 
-
-@media (max-width: 1000px) {
-  .home-occupation-container {
-    display: flex;
-    flex-direction: column;
+@media screen and (max-width: 650px) {
+  .home__animated-letters-container {
+    font-size: 3.5rem;
   }
+}
 
-  .occupation-space {
+@media screen and (max-width: 500px) {
+  .home__animated-letter-space {
     display: none;
   }
 
-  .home-page-container {
-    height: auto;
-    margin-bottom: 10rem;
-    margin-top: 10rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .home-page h1{
-    font-size: 2.5rem;
+  // Add line-break to "Software /br Engineer"
+  .home__animated-letters-container--line-break {
+    display: flex;
+    flex-direction: column;
   }
 }
