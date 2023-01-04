@@ -19,9 +19,10 @@ const Experience = ({
 }) => {
 
   return (
-      <div className="mainpage-section experience-section" id="nav-experience">
-        <h1 className="section-header"> <span className="section-header-text">My Experience</span></h1>
-        <div className="experience-selection-pane">
+      <div className="mainpage-section experience" id="nav-experience">
+        <h1 className="section-header">
+          <span className="section-header-text">My Experience</span>
+        </h1>
           <ExperienceToC 
             company = {company}
             setCompany = {setCompany}
@@ -38,7 +39,7 @@ const Experience = ({
             handleExperience = {handleExperience}
           />
         </div>
-      </div>
+      // </div>
   )
 }
 

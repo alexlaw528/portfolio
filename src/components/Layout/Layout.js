@@ -73,7 +73,7 @@ const Layout = () => {
               setDescription = {setDescription}
             />
           <Home />
-          {/* <Experience 
+          <Experience 
             company = {company}
             setCompany = {setCompany}
             position = {position}
@@ -88,12 +88,12 @@ const Layout = () => {
             setHighlight = {setHighlight}
             handleExperience = {handleExperience}
           />
-          <Projects />
-          <Contact />
-          <Sidebar /> 
-          <BackToTopButton />
-          <Footer /> */}
+          {/* <Projects /> */}
+          {/* <Contact /> */}
+          {/* <BackToTopButton /> */}
+          {/* <Footer /> */}
         </div>
+          <Sidebar /> 
       </div>
   )
 }

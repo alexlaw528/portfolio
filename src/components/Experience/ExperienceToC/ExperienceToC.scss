@@ -1,18 +1,19 @@
 .experience-toc {
   display: grid;
   grid-template-columns: 1fr 4fr;
-}
+  // border-style: solid; //test
 
-.experience-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  color: rgb(135,136,142);
-  justify-self: center;
-  padding: 0.75rem;
-  width: 100%;
-
-  .experience-select {
+  /* Experience radio selector */
+  &__radio {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    color: rgb(135,136,142);
+    justify-self: center;
+    padding: 0.75rem;
+  }
+  
+  &__radio-select {
     font-size: 1.25rem;
     font-weight: 400;
     border-left-style: solid;
@@ -21,34 +22,39 @@
     justify-self: center;
     padding: 0.5rem;
     transition: 1s;
+    
+    &--highlight-on {
+      color: rgb(44,209,181);
+      background-color: rgb(15, 31, 55);
+      border-left-color: rgb(44,209,181);
+      transition: 1s;
+    }
+
+    &:hover {
+      color: rgb(44,209,181);
+      background-color: rgb(15, 31, 55);
+      border-left-color: rgb(44,209,181);
+      transition: 1s;
+    }
+
   }
 
-  .experience-select:hover {
-    color: rgb(44,209,181);
-    background-color: rgb(15, 31, 55);
-    border-left-color: rgb(44,209,181);
-    transition: 1s;
+  &__radio-input {
+    display: none;
+    cursor: pointer;
   }
 
-  label{
+  &__radio-label {
     height: 0;
   }
-}
 
-.experience-info-blurb {
-  color: white;
-  animation: fadeIn .5s .25s backwards;
-
-
-  .experience-company-info {
-    color: #8d8d8d;
-    font-weight: 400;
-    font-size: 2rem;
-    font-family: sans-serif;
-    letter-spacing: 3px;
+  /* Experience-toc info section */
+  &__info {
+    color: white;
+    animation: fadeIn .5s .25s backwards;
   }
 
-  .experience-position-info {
+  &__position {
     color: rgb(44,209,181);
     font-weight: 400;
     font-size: 1.5rem;
@@ -56,7 +62,7 @@
     letter-spacing: 3px;
   }
 
-  .experience-date-info {
+  &__date {
     color: #8d8d8d;
     font-weight: 400;
     font-size: 1rem;
@@ -64,85 +70,164 @@
     letter-spacing: 3px;
   }
 
-  .experience-company-info,
-  .experience-position-info,
-  .experience-date-info {
+  &__position,
+  &__date {
     padding-left: 40px;
   }
 
-  .experience-description-info{
+  &__description {
     margin-top: 1rem;
     list-style: none;
     font-weight: 350;
     letter-spacing: 1px;
+  }
 
-    .experience-description-info-li{
-      padding-left: 30px;
-      position: relative;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      color: rgb(195, 208, 243);
-    }
-    .experience-description-info-li::before {
+  &__list{
+    padding-left: 30px;
+    position: relative;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: rgb(195, 208, 243);
+
+    &::before {
       content: "▷";
       color: rgb(44,209,181);
       font-size: 0.1 rem;
       position: absolute;
       left: 0;
-    }
+    } 
   }
 }
 
 
-.experience-input {
-  display: none;
-}
+// .experience-toc__info {
+//   color: white;
+//   animation: fadeIn .5s .25s backwards;
 
-label {
-  cursor: pointer;
-}
 
-#highlight-on {
-  color: rgb(44,209,181);
-  background-color: rgb(15, 31, 55);
-  border-left-color: rgb(44,209,181);
-  transition: 1s;
-}
+//   .experience-company-info {
+//     color: #8d8d8d;
+//     font-weight: 400;
+//     font-size: 2rem;
+//     font-family: sans-serif;
+//     letter-spacing: 3px;
+//   }
 
-@media screen and (max-width: 600px) {
+//   .experience-toc__position {
+//     color: rgb(44,209,181);
+//     font-weight: 400;
+//     font-size: 1.5rem;
+//     font-family: sans-serif;
+//     letter-spacing: 3px;
+//   }
+
+//   .experience-toc__date {
+//     color: #8d8d8d;
+//     font-weight: 400;
+//     font-size: 1rem;
+//     font-family: sans-serif;
+//     letter-spacing: 3px;
+//   }
+
+//   .experience-company-info,
+//   .experience-toc__position,
+//   .experience-toc__date {
+//     padding-left: 40px;
+//   }
+
+//   .experience-toc__description{
+//     margin-top: 1rem;
+//     list-style: none;
+//     font-weight: 350;
+//     letter-spacing: 1px;
+
+//     .experience-toc__list{
+//       padding-left: 30px;
+//       position: relative;
+//       font-size: 1rem;
+//       margin-bottom: 1rem;
+//       color: rgb(195, 208, 243);
+//     }
+//     .experience-toc__list::before {
+//       content: "▷";
+//       color: rgb(44,209,181);
+//       font-size: 0.1 rem;
+//       position: absolute;
+//       left: 0;
+//     }
+//   }
+// }
+
+
+// &__radio-input {
+//   display: none;
+//   cursor: pointer;
+// }
+
+// #highlight-on {
+//   color: rgb(44,209,181);
+//   background-color: rgb(15, 31, 55);
+//   border-left-color: rgb(44,209,181);
+//   transition: 1s;
+// }
+
+@media screen and (max-width: 650px) {
   .experience-toc {
     display: flex;
     flex-direction: column;
   }
 
-  .experience-list {
+  .experience-toc__radio {
     flex-direction: row;
-    overflow-x: scroll;
-    // justify-content: center;
+    justify-content: center;
   }
 
-  .experience-list .experience-select {
+  .experience-toc__radio-select {
     border-left: none;
-    border-top-style: solid;
-    border-top-width: 3px;
-    border-top-color: rgb(135,136,142);
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(135,136,142);
   }
 
-  .experience-select:hover {
+  .experience-toc__position,
+  .experience-toc__date,
+  .experience-toc__description,
+  .experience-toc__radio {
+    padding-left: 0px;
+  }
+
+  .experience-toc__position,
+  .experience-toc__date {
+    text-align: center;
+  }
+
+
+  .radio__select:hover {
     color: rgb(44,209,181);
     background-color: rgb(15, 31, 55);
     border-top-color: rgb(44,209,181);
     transition: 1s;
   }
+}
 
-  .experience-info-blurb {
-    max-width: 80vw;
+@media screen and (max-width: 500px) {
+  .experience-toc__radio {
+    padding-top: 0px;
+  }
+  .experience-toc__radio-label {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .experience-toc__radio-label {
+    font-size: .8rem;
+    max-width: 320px; //Minimum width we want to support
   }
 
-  // .experience-position-info,
-  // .experience-date-info,
-  // .experience-description-info {
-  //   text-align: center;
-  // }
+  .experience-toc__position {
+    font-size:1.25rem;
+  }
+
 
 }
