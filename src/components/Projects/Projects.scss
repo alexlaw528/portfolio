@@ -1,6 +1,6 @@
 .projects__header{
   color: rgb(44,209,181);
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1.25rem;
   letter-spacing: 3px;
   margin-bottom: 0.75rem;
@@ -8,8 +8,13 @@
 }
 
 .projects__card-layout {
-  border-style: solid;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (max-width: 400px) {
+  .projects__header{
+    font-size: 1rem;
+  }
 }
