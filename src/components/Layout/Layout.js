@@ -89,7 +89,7 @@ const Layout = () => {
             handleExperience = {handleExperience}
           />
           <Projects />
-          {/* <Contact /> */}
+          <Contact />
           {/* <BackToTopButton /> */}
           {/* <Footer /> */}
         </div>
