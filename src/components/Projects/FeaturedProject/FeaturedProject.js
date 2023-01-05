@@ -9,32 +9,37 @@ const FeaturedProject = () => {
   const featuredProject = projectsInfo[0];
 
   return (
-      <div class="featured-card-block">
-        <div class="featured-heading-block">
-          <div class="featured-heading">Featured Project - {featuredProject.project} </div>
-        </div>
+      <div className="featured-project">
+        <div className="projects__header">Featured Project - {featuredProject.project} </div>
 
-        <div class="featured-image-wrapper">
-          <img src={featuredProject.image} class="card-img" id="featured-card-image" alt="featured Project img"/>
+        <div className="featured-project__image-wrapper">
+          <img 
+            src={featuredProject.image} 
+            className="featured-project__image" 
+            alt="featured-project-img"
+          />
 
-          <div class="featured-bg"></div>
-
-          <div class="featured-project-content">
-            {/* <h5 class="card-title" id="featured-card-title">{featuredProject.project}</h5> */}
-            <p class="card-text" id="featured-card-description">Vue development tool  for fast prototyping and project initialization</p>
-            <div id="featured-project-tech-used">
+          <div className="featured-project__details">
+            <div className="featured-project__card-description">
+              Create Vue projects faster! 
+            </div>
+            <div className="featured-project__tech">
               {
                 featuredProject.tech.map((tech, techIdx) => 
-                  <span class="featured-project-tech-item" key={techIdx}>
+                  <span className="featured-project__tech-item" key={techIdx}>
                     {tech}
                   </span>
                 )
               }
             </div>
-            <div id="featured-card-resource-links">
+            <div className="featured-project__link">
               {
                 featuredProject.links.map((links, linksIndex) => 
-                  <a class="featured-project-links" href={links.link} key={linksIndex}>
+                  <a 
+                    className="featured-project__link-item" 
+                    href={links.link} 
+                    ey={linksIndex}
+                  >
                     <FontAwesomeIcon icon={links.icon} />
                   </a>
                 )
@@ -47,3 +52,14 @@ const FeaturedProject = () => {
 }
 
 export default FeaturedProject
+
+// featured-card-block --> featured-project
+
+// featured-image-wrapper --> featured-project__image-wrapper
+// card-img --> featured-project__image
+// featured-project-content --> featured-project__details
+// #featured-card-description --> featured-project__card-description
+// #featured-project-tech-used --> featured-project__technology
+// featured-project-tech-item --> featured-project__tech-item
+// featured-card-resource-links --> featured-project__link
+// featured-project-links --> featured-project__link-item

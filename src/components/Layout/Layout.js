@@ -88,7 +88,7 @@ const Layout = () => {
             setHighlight = {setHighlight}
             handleExperience = {handleExperience}
           />
-          {/* <Projects /> */}
+          <Projects />
           {/* <Contact /> */}
           {/* <BackToTopButton /> */}
           {/* <Footer /> */}
