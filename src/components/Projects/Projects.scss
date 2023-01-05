@@ -1,24 +1,15 @@
-
-.projects-section-header{
-  color: white;
-}
-
-.other-projects-header{
+.projects__header{
   color: rgb(44,209,181);
   font-weight: 400;
   font-size: 1.25rem;
   letter-spacing: 3px;
   margin-bottom: 0.75rem;
+  text-align: center;
 }
 
-.other-projects-section{
-  padding: 0 5%;
-}
-
-@media screen and (max-width: 600px) {
-
-  .projects-section {
-    max-width: 75vw;
-
-  }
+.projects__card-layout {
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
