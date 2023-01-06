@@ -26,6 +26,7 @@ const Home = () => {
 
   return (
     <div className="mainpage-section home" id="nav-home">
+      <img className="home__headShot" src={headShot} alt="alex-law"/>
       <h1 className="home__header-container">
         <div className="home__animated-letters-container">
           <AnimatedLetters 
@@ -42,7 +43,8 @@ const Home = () => {
             idx={19} 
           />
         </div>
-        <div className="home__animated-letters-container home__animated-letters-container--line-break">
+        <div className="home__animated-letters-container home__animated-letters-container--line-break
+        home__animated-letters-container--swe">
           <AnimatedLetters letterClass={letterClass}
             strArray={jobArray}
             idx={22} 
