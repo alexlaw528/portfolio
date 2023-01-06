@@ -90,8 +90,8 @@ const Layout = () => {
           />
           <Projects />
           <Contact />
-          {/* <BackToTopButton /> */}
-          {/* <Footer /> */}
+          <BackToTopButton />
+          <Footer />
         </div>
           <Sidebar /> 
       </div>
