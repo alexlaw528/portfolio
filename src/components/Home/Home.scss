@@ -1,8 +1,8 @@
-$headShot-height: 340px;
+$headShot-height: 375px;
 
 .home {
-  // height: 100vh;
-  margin: 100px auto 100px auto;
+  min-height: 100vh !important;
+  // margin: 100px auto 100px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,7 +34,7 @@ $headShot-height: 340px;
     position: absolute;
     height: $headShot-height;
     top: calc(50% - ($headShot-height)/2);
-    left: 60%;
+    left: 50%;
     z-index: 0;
     border-radius: 50%;
     border-style: solid;
@@ -43,8 +43,8 @@ $headShot-height: 340px;
   &__subtext {
     color: #8d8d8d;
     margin-top: 20px;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 16px;
     font-family: sans-serif;
     letter-spacing: 3px;
     z-index: 1;
@@ -78,6 +78,10 @@ $headShot-height: 340px;
 }
 
 @media screen and (max-width: 850px) {
+  .home {
+    margin: 100px auto 100px auto;
+    min-height: auto !important;
+  }
   .home__animated-letters-container {
     font-size: 4.5rem;
   }
