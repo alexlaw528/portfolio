@@ -1,3 +1,5 @@
+$headShot-height: 340px;
+
 .home {
   // height: 100vh;
   margin: 100px auto 100px auto;
@@ -5,6 +7,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  position: relative;
+
+  // remove
+  // border-style: solid;
 
   &__header-container {
     color: rgb(195, 208, 243);
@@ -12,10 +18,26 @@
     margin: 0;
     font-family: 'Coolvetica','Calibri', 'Gill sans', sans-serif;
     font-weight: 400;
+    z-index: 1;
   }
+
   
   &__animated-letters-container{
     width: 100%;
+  }
+
+  &__animated-letters-container--swe{
+    font-size: 5rem; 
+  }
+
+  &__headShot{
+    position: absolute;
+    height: $headShot-height;
+    top: calc(50% - ($headShot-height)/2);
+    left: 60%;
+    z-index: 0;
+    border-radius: 50%;
+    border-style: solid;
   }
 
   &__subtext {
@@ -25,6 +47,8 @@
     font-size: 14px;
     font-family: sans-serif;
     letter-spacing: 3px;
+    z-index: 1;
+
   }
 
   &__contact-button {
@@ -47,8 +71,9 @@
   } 
 
   &__contact-button,
-  &__subtext {
-    animation: fadeIn .5s 4.5s backwards;
+  &__subtext,
+  &__headShot {
+    animation: fadeIn .5s 4.25s backwards;
   }
 }
 
@@ -56,22 +81,49 @@
   .home__animated-letters-container {
     font-size: 4.5rem;
   }
+
+  .home__animated-letters-container--swe{
+    font-size: 3.5rem; 
+  }
+
+  .home__headShot {
+    $headShot-height: 250px;
+    height: $headShot-height;
+    top: calc(50% - ($headShot-height)/2);
+  }
+
 }
 
 @media screen and (max-width: 650px) {
   .home__animated-letters-container {
     font-size: 3.5rem;
   }
+
+  .home__animated-letters-container--swe{
+    font-size: 2.5rem; 
+  }
+
+  .home__headShot {
+    $headShot-height: 225px;
+    height: $headShot-height;
+    top: calc(50% - ($headShot-height)/2);
+    left: 50%;
+
+  }
 }
 
 @media screen and (max-width: 500px) {
-  .home__animated-letter-space {
+  .home__headShot {
     display: none;
   }
+}
 
-  // Add line-break to "Software /br Engineer"
-  .home__animated-letters-container--line-break {
-    display: flex;
-    flex-direction: column;
+@media screen and (max-width: 400px) {
+  .home__animated-letters-container--swe{
+    font-size: 2rem; 
+  }
+
+  .home__subtext {
+    font-size: 12px;
   }
 }
