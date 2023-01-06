@@ -90,10 +90,10 @@ const Layout = () => {
           />
           <Projects />
           <Contact />
-          <BackToTopButton />
           <Footer />
-        </div>
+          <BackToTopButton />
           <Sidebar /> 
+        </div>
       </div>
   )
 }
