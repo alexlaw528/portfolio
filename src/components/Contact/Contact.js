@@ -11,22 +11,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Contact = () => {
   return (
-    <div className="mainpage-section contact-section" id="nav-contact">
+    <div className="mainpage-section contact" id="nav-contact">
       <h1 className="section-header"> 
-        <span className="section-header-text"></span>
+        <span className="section-header-text">GET IN TOUCH</span>
       </h1>
-      <div className="contact-my-info">
-        <h1 className="contact-header">GET IN TOUCH</h1>
-        <h2 className="contact-number">
-          <FontAwesomeIcon icon={faPhone}/> {'\u00A0'}(626) - 377 - 3946
+      <div className="contact__info-section">
+        <h2 className="contact__info">
+          <FontAwesomeIcon icon={faPhone}/>
+          {'\u00A0'}(626) - 377 - 3946
         </h2>
-        <h2 className="contact-email">
-          <FontAwesomeIcon icon={faEnvelope}/> {'\u00A0'} alexlaw528@gmail.com
+        <h2 className="contact__info">
+          <FontAwesomeIcon icon={faEnvelope}/> 
+          {'\u00A0'} alexlaw528@gmail.com
         </h2>
+        <EmailForm />
       </div>
-      <EmailForm />
     </div>
   )
 }
 
 export default Contact
+
+// .contact-section --> .contact
+// .contact-my-info --> .contact__info
+// .contact-number --> .contact__number
+// .contact-email --> .contact__email

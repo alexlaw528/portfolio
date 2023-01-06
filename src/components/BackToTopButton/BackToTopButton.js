@@ -8,8 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const BackToTopButton = () => {
 
   return (
-    <div className="to-top-button"> 
-      <a href="#nav-home" className="top-arrow">
+    <div className="back-to-top"> 
+      <a href="#nav-home" className="back-to-top__arrow">
         <FontAwesomeIcon className="fa-bounce" icon={faArrowUp} />
       </a>
     </div>

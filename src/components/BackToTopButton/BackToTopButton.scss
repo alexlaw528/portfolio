@@ -1,12 +1,17 @@
-
-.to-top-button {
+.back-to-top {
   position: absolute;
-  bottom: 17.5rem;
+  bottom: -125px;
   right: 3rem;
   font-size: 3rem;
 
+  &__arrow {
+    color: white;
+  }
 }
-.top-arrow {
-  color: white;
 
+
+@media screen and (max-width: 1350px) {
+  .back-to-top{
+    display: none;
+  }
 }

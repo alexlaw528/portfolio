@@ -89,11 +89,11 @@ const Layout = () => {
             handleExperience = {handleExperience}
           />
           <Projects />
-          {/* <Contact /> */}
-          {/* <BackToTopButton /> */}
-          {/* <Footer /> */}
-        </div>
+          <Contact />
+          <Footer />
+          <BackToTopButton />
           <Sidebar /> 
+        </div>
       </div>
   )
 }
