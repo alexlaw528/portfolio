@@ -92,7 +92,7 @@ const Layout = () => {
           <Contact />
           <Footer />
           <BackToTopButton />
-          <Sidebar /> 
+          <Sidebar />  
         </div>
       </div>
   )
