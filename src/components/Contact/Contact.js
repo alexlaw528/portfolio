@@ -17,13 +17,15 @@ const Contact = () => {
       </h1>
       <div className="contact__info-section">
         <h2 className="contact__info">
-          <FontAwesomeIcon icon={faPhone}/> {'\u00A0'}(626) - 377 - 3946
+          <FontAwesomeIcon icon={faPhone}/>
+          {'\u00A0'}(626) - 377 - 3946
         </h2>
         <h2 className="contact__info">
-          <FontAwesomeIcon icon={faEnvelope}/> {'\u00A0'} alexlaw528@gmail.com
+          <FontAwesomeIcon icon={faEnvelope}/> 
+          {'\u00A0'} alexlaw528@gmail.com
         </h2>
+        <EmailForm />
       </div>
-      <EmailForm />
     </div>
   )
 }
