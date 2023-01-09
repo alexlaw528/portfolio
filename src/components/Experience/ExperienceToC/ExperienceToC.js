@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './ExperienceToC.scss';
 const experienceInfo = require('../../../assets/experienceInfo.js');
 
@@ -19,14 +19,14 @@ const ExperienceToC = ({
 
   const radioSelector = experienceInfo.map((experience, index) => 
     <div 
-      className={
+      className = {
           highlight === `radio${index}` ? 
           "experience-toc__radio-select experience-toc__radio-select--highlight-on" 
           : 
           "experience-toc__radio-select experience-toc__radio-select--highlight-off"
       }
 
-      id={highlight === `radio${index}` ? "experience-toc__radio-select--highlight-on" : "experience-toc__radio-select--highlight-off"}
+      id = { highlight === `radio${ index }` ? "experience-toc__radio-select--highlight-on" : "experience-toc__radio-select--highlight-off"}
     >
       <input 
         className="experience-toc__radio-input" 

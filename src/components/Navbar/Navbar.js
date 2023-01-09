@@ -35,31 +35,39 @@ const NavBar = ({
     setDateStr(expDetails.dateStr);
     setDescription(expDetails.description);
   }
-  return (
-    <div class="nav-container" id={navBarVisible ? "navbar-show" : "navbar-hidden"}>
 
-      <ul className="nav-bar-link">
-          <li className="main-logo-link">
-            <a href="#nav-home" id="nav-home-logo">
-              <img id="nav-logo" src={al_nav_logo2} alt="logo"/>
+  return (
+    <div class= {navBarVisible ? "navbar navbar--show" : "navbar navbar--hide"}>
+      <ul className="navbar__list">
+          <li className="navbar__logo">
+            <a href="#nav-home" id="navbar__logo-link">
+              <img 
+                className="navbar__logo-img" 
+                src={al_nav_logo2} 
+                alt="logo"
+              />
             </a>
           </li>
 
           <li>
-            <button type="button" onClick={handleHamburger} href="#" className="nav-hamburger">
+            <button 
+              className="navbar__hamburger"
+              type="button" 
+              onClick={handleHamburger} 
+              href="#" 
+            >
               <FontAwesomeIcon className="fa-2xl" icon={faBars}/>  
             </button>
           </li>
           
           <div 
-            className="section-links"
-            // id="section-links-fullscreen"
-            id = {hamburgerVisible ? "" : "hamburger-hidden"}
-            >
+            className="navbar__section-links"
+            id = {hamburgerVisible ? "" : "navbar__hamburger--hidden"}
+          >
             <li>
               <a 
+                className = "navbar__link"
                 href="#nav-experience"
-                id="experience-link"
                 onClick={() => handleExperienceDetails("experience")}
               >
                 Experience
@@ -67,19 +75,22 @@ const NavBar = ({
             </li>
             <li>
                 <a 
+                  className = "navbar__link"
                   href="#nav-experience" 
-                  id = "education-link"
                   onClick={() => handleExperienceDetails("education")}
                 >
                   Education
                 </a>
             </li>
-            <li><a href="#nav-projects">Projects</a></li>
-            <li><a href="#nav-contact">Contact</a></li>
+            <li>
+              <a className="navbar__link" href="#nav-projects">Projects</a>
+            </li>
+            <li>
+              <a className="navbar__link" href="#nav-contact">Contact</a>
+            </li>
           </div>
       </ul>
     </div>
-
   )
 }
 
