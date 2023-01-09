@@ -75,9 +75,12 @@
   }
 
   &__position,
-  &__date,
-  &__carousel {
+  &__date {
     padding-left: 40px;
+  }
+
+  &__carousel {
+    padding-left: 70px;
   }
 
   &__description {
