@@ -7,23 +7,23 @@ const otherProjects = projectsInfo.slice(1, projectsInfo.length);
 
 const ProjectCard = () => {
   const projectCardList = otherProjects.map((project, index) => 
-      <article class="postcard dark green">
-        <img class="postcard__img" src={project.image} alt="Title" />
-        <div class="postcard__text">
-          <h1 class="postcard__title green">{project.project}</h1>
-          <div class="postcard__bar"></div>
-          <div class="postcard__preview-txt">{project.description}</div>
-          <ul class="postcard__tagbox">
+      <article className="postcard dark green" key={index}>
+        <img className="postcard__img" src={project.image} alt="Title" />
+        <div className="postcard__text">
+          <h1 className="postcard__title green">{project.project}</h1>
+          <div className="postcard__bar"></div>
+          <div className="postcard__preview-txt">{project.description}</div>
+          <ul className="postcard__tagbox">
             {
               project.tech.map((tech, techIdx) => 
-                <li class="tag__tech">{tech}</li>
+                <li className="tag__tech">{tech}</li>
               )
             }
           </ul>
-          <ul class="postcard__tagbox">
+          <ul className="postcard__tagbox">
             {
               project.links.map((link, linkIdx) => 
-                <li class="tag__item">
+                <li className="tag__item">
                   <a href={link.link}>
                     <FontAwesomeIcon icon={link.icon} />
                   </a>
@@ -37,8 +37,8 @@ const ProjectCard = () => {
   
 
   return ( 
-    <section class="dark">
-      <div class="py-4">
+    <section className="dark">
+      <div className="py-4">
         {projectCardList}
       </div>
     </section>

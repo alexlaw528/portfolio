@@ -9,13 +9,16 @@ import Contact from '../Contact/Contact.js';
 import Sidebar from '../Sidebar/Sidebar.js';
 import Footer from '../Footer/Footer.js';
 import BackToTopButton from '../BackToTopButton/BackToTopButton';
-const experienceInfo = require('../../assets/experienceInfo.js');
+import experienceInfo from '../../assets/experienceInfo.js';
+
+// const experienceInfo = require('../../assets/experienceInfo.js');
 
 const Layout = () => {
   const [ company, setCompany ] = useState(experienceInfo[0].company);
   const [ position, setPosition ] = useState(experienceInfo[0].position);
   const [ dateStr, setDateStr ] = useState(experienceInfo[0].dateStr);
   const [ description, setDescription ] = useState(experienceInfo[0].description);
+  const [ carouselImage, setCarouselImage ] = useState(experienceInfo[0].carouselImage)
   const [ animate, setAnimate ] = useState(true);
   const [ highlight, setHighlight ] = useState('radio0');
   const [ navBarVisible, setNavBarVisible ] = useState(true);
@@ -43,12 +46,13 @@ const Layout = () => {
     setHighlight(e.target.id);
 
     for (const key of experienceInfo) {
-      const { company, position, dateStr, description } = key;
+      const { company, position, dateStr, description, carouselImage } = key;
       if (e.target.value === company) {
         setCompany(company);
         setPosition(position);
         setDateStr(dateStr);
         setDescription(description);
+        setCarouselImage(carouselImage)
       }
     }
   }
@@ -79,6 +83,8 @@ const Layout = () => {
             setDateStr = {setDateStr}
             description = {description}
             setDescription = {setDescription}
+            carouselImage = {carouselImage}
+            setCarouselImage = {setCarouselImage}
             animate = {animate}
             setAnimate = {setAnimate}
             highlight = {highlight}

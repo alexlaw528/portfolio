@@ -1,3 +1,4 @@
+import { cardClasses } from "@mui/material";
 import React from "react";
 import './Experience.scss';
 import ExperienceToC from './ExperienceToC/ExperienceToC.js'
@@ -11,6 +12,8 @@ const Experience = ({
   setDateStr,
   description,
   setDescription,
+  carouselImage,
+  setCarouselImage,
   animate,
   setAnimate,
   highlight,
@@ -32,14 +35,15 @@ const Experience = ({
             setDateStr = {setDateStr}
             description = {description}
             setDescription = {setDescription}
+            carouselImage = {carouselImage}
+            setCarouselImage = {setCarouselImage}
             animate = {animate}
             setAnimate = {setAnimate}
             highlight = {highlight}
             setHighlight = {setHighlight}
             handleExperience = {handleExperience}
           />
-        </div>
-      // </div>
+      </div>
   )
 }
 
