@@ -75,9 +75,13 @@
   }
 
   &__position,
-  &__date,
-  &__carousel {
+  &__date {
     padding-left: 40px;
+  }
+
+  &__carousel {
+    padding-left: 70px;
+    max-width: 400px;
   }
 
   &__description {
@@ -87,10 +91,6 @@
     letter-spacing: 1px;
   }
 
-  &__carousel {
-    max-width: 400px;
-    // align-self: center;
-  }
 
   &__list{
     padding-left: 30px;
