@@ -6,17 +6,17 @@ import FeaturedProject from './FeaturedProject/FeaturedProject.js';
 const Projects = () => {
 
   return (
-      <div className="container projects-section" id="nav-projects">
-        <h1 className="section-header"><span className="section-header-text">Projects</span></h1>
-        <FeaturedProject />
+    <div className="mainpage-section projects" id="nav-projects">
+      <h1 className="section-header">
+        <span className="section-header-text">Projects</span>
+      </h1>
+      <FeaturedProject />
 
-        <div className="other-projects-section">
-          <h3 className="other-projects-header">Other Projects</h3>
-          <div className="other-projects-card-grid">
-            <ProjectCard />
-          </div>
-        </div>
+      <h3 className="projects__header">Other Projects</h3>
+      <div className="projects__card-layout">
+        <ProjectCard />
       </div>
+    </div>
   )
 }
 

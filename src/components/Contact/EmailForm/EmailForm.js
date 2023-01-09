@@ -4,6 +4,15 @@ import './EmailForm.scss';
 import emailjs from '@emailjs/browser';
 import PacmanLoader from "react-spinners/PacmanLoader";
 
+/**
+ * Test to see if netlify will properly assign these values at build time
+ * Still a vulnerability as these are exposed on the frontend
+ * Need to refactor to use Netlify's lambda functions to make API calls 
+**/
+const service_id = process.env.REACT_APP_SERVICE_ID;
+const template_id = process.env.REACT_APP_TEMPLATE_ID;
+const api_key = process.env.REACT_APP_API_KEY;
+
 const EmailForm = () => {
   const form = useRef();
   const [inputName, setInputName] = useState("");
@@ -17,7 +26,7 @@ const EmailForm = () => {
     e.preventDefault();
     setEmailLoad(true);
 
-    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_API_KEY)
+    emailjs.sendForm(service_id, template_id, form.current, api_key)
     .then((result) => {
         setEmailLoad(false);
         setInputName("");
@@ -38,75 +47,62 @@ const EmailForm = () => {
   }
 
   return (
-    <form ref={form} className="contact-form" onSubmit={sendEmail}>
-      <div className="contact-user-input" id="contact-name-group">
-        {/* <label className="contact-label" for="contact-name"> Name: </label> */}
-        <input 
-          type="text" 
-          placeholder="Name"
-          className="contact-input" 
-          id="contact-name" 
-          name="user_name" 
-          value={inputName}
-          onChange={(event) => setInputName(event.target.value)}
-        />
-      </div>
+    <form ref={form} className="email" onSubmit={sendEmail}>
+      <input 
+        type="text" 
+        placeholder="Name"
+        className="email__user-input" 
+        id="contact-name" 
+        name="user_name" 
+        value={inputName}
+        onChange={(event) => setInputName(event.target.value)}
+      />
+      <input 
+          type="email" 
+          placeHolder="Email"
+          className="email__user-input" 
+          name="user_email" 
+          value={inputEmail}
+          onChange={(event) => setInputEmail(event.target.value)}
+      />
+      <input 
+        type="phone" 
+        placeHolder="Phone Number"
+        className="email__user-input" 
+        name="user_phone" 
+        value={inputPhone}
+        onChange={(event) => setInputPhone(event.target.value)}
+      />
+      <textarea 
+        placeHolder="Message"
+        className="email__user-input" 
+        name="message" 
+        value={inputMessage}
+        onChange={(event) => setInputMessage(event.target.value)}
+      />
+      <input 
+        className="email__user-input-submit" 
+        type="submit" 
+        value="Send Message"
+      />
 
-      <div className="contact-user-input" id="contact-email-group">
-        {/* <label className="contact-label" for="contact-email"> Email: </label> */}
-        <input 
-            type="email" 
-            placeHolder="Email"
-            className="contact-input" 
-            id="contact-email" 
-            name="user_email" 
-            value={inputEmail}
-            onChange={(event) => setInputEmail(event.target.value)}
-          />
-      </div>
-
-      <div className="contact-user-input" id="contact-phone-group">
-        {/* <label className="contact-label" for="contact-phone"> Phone: </label> */}
-        <input 
-          type="phone" 
-          placeHolder="Phone Number"
-          className="contact-input" 
-          id="contact-phone" 
-          name="user_phone" 
-          value={inputPhone}
-          onChange={(event) => setInputPhone(event.target.value)}
-        />
-      </div>
-
-      <div className="contact-user-input" id="contact-message-group">
-        {/* <label className="contact-label" for="contact-message"> Message: </label> */}
-        <textarea 
-          id="contact-message" 
-          placeHolder="Message"
-          className="contact-input" 
-          name="message" 
-          value={inputMessage}
-          onChange={(event) => setInputMessage(event.target.value)}
-        />
-      </div>
-
-      <input className="contact-user-input" id="contact-send" type="submit" value="Send Message"/>
-
-      <div className="pacman-loader">
+      {/* Loading pop-up */}
+      <div className="email__loader">
         <PacmanLoader
-          className="pacman-loader"
+          className="pacman"
           color="rgb(44,209,181)"
           loading={emailLoad}
-          size="70px"
+          size="40px"
           aria-label="Loading Spinner"
           data-testid="loader"
         />
       </div>
 
+      {/* Error pop-up */}
       {
         emailError ? 
-          <dialog className="error-modal">
-            <div className="error-modal-text">
+          <dialog className="email__error">
+            <div className="email__error-text">
             Error sending email! <br/> 
             Please contact directly: <br/>
             alexlaw528@gmail.com <br/>
@@ -121,12 +117,16 @@ const EmailForm = () => {
           null
       }
     </form>
-
-    
-
-
-
   )
 }
 
 export default EmailForm
+
+// .contact-form --> email
+// .contact-user-input --> email__input-group (removed)
+// .contact-input --> email__user-input
+// .contact-user-input
+
+// .pacman-loader --> email__loader
+// .error_email --> email__error
+// .error-modal-text --> email__error-text

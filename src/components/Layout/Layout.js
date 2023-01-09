@@ -20,7 +20,6 @@ const Layout = () => {
   const [ highlight, setHighlight ] = useState('radio0');
   const [ navBarVisible, setNavBarVisible ] = useState(true);
   const [ currentScrollY, setCurrentScrollY ] = useState(0);
-
   
   function handleScroll(event) {
     const scroller = document.querySelector(".page");
@@ -42,10 +41,8 @@ const Layout = () => {
   function handleExperience(e) {
     setAnimate(!animate);
     setHighlight(e.target.id);
-    console.log('e.target.id', e.target.id);
 
     for (const key of experienceInfo) {
-      console.log('exp loop');
       const { company, position, dateStr, description } = key;
       if (e.target.value === company) {
         setCompany(company);
@@ -90,9 +87,9 @@ const Layout = () => {
           />
           <Projects />
           <Contact />
-          <Sidebar /> 
-          <BackToTopButton />
           <Footer />
+          <BackToTopButton />
+          <Sidebar />  
         </div>
       </div>
   )

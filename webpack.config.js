@@ -1,5 +1,10 @@
-const path = require("path")
+const path = require("path");
+// const dotenv = require('dotenv').config( {
+//   path: path.join(__dirname, '.env')
+// } );
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
 
 module.exports = {
   entry: './src/index.js',
@@ -8,7 +13,7 @@ module.exports = {
     filename: "bundle.js",
   },
   
-  mode: 'development',
+  mode: process.env.NODE_ENV,
   module: {
     rules: [
       {
@@ -39,12 +44,22 @@ module.exports = {
       },
     ]
   },
-  plugins: [new HtmlWebpackPlugin({
+  plugins: [
+    new HtmlWebpackPlugin({
     title: 'Development',
     template: 'index.html',
     favicon: './favicon.ico',
-
-  })],
+    }),
+    new webpack.DefinePlugin({
+      // 'process.env.REACT_APP_SERVICE_ID': JSON.stringify(process.env.REACT_APP_SERVICE_ID),
+      // 'process.env.REACT_APP_TEMPLATE_ID': JSON.stringify(process.env.REACT_APP_TEMPLATE_ID),
+      // 'process.env.REACT_APP_API_KEY': JSON.stringify(process.env.REACT_APP_API_KEY)
+      // "process.env": dotenv.parsed
+    }),
+    new Dotenv({
+      systemvars: true
+    }),
+],
   devServer: {
     static: {
       publicPath: '/build`',

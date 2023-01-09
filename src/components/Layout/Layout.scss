@@ -1,5 +1,10 @@
+@use '../../assets/abstracts/colors';
+
 .main-nav {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .test-link {
@@ -8,7 +13,7 @@
 }
 
 .page {
-  height: 100vh;
+  height: 100%;
   display: grid;
   grid-auto-rows: auto;
   margin: auto;
@@ -43,31 +48,31 @@
   margin-left: -20px;
 }
 
-.container {
-  width: 100%;
-  min-height: 60vh;
-  margin: auto;
-  font-family: 'Hind Siliguri', sans-serif;
+.mainpage-section {
+  width: 90%;
   max-width: 1140px;
+  // margin: 0 auto 0 auto;
+  // margin: 0 3rem 0 3rem;
+  // font-family: 'Hind Siliguri', sans-serif;
 }
 
 .section-header {
-  color: rgb(195,208,243);
+  color: colors.$primary-color;
   position: relative;
   margin-bottom: 2rem;
-  margin: 0 20px 2rem 20px;
+  font-size: 2rem;
+
   .section-header-text{
-    background-color: #022c43;
-    padding: 1.25rem;
+    background-color: colors.$background-color;
+    padding-right: 1.25rem;
   }
 }
-
 
 .section-header:after {
   content: "";
   display: block;
   width: 100%;
-  height: .5px;
+  height: 2px;
   background: #8d8d8d;
   position: absolute;
   right: 0;
@@ -76,11 +81,23 @@
 }
 
 @media screen and (max-width: 1140px) {
-  .container {
-    max-width: 75vw;
+  .mainpage-section {
+    margin: 0 3rem 0 3rem;
+    width: 90%;
   }
 
   .section-header{
     margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .section-header{
+    font-size: 1.5rem;
+  }
+
+  .mainpage-section {
+    margin: 0 1rem 0 1rem;
+    max-width: 300px;
   }
 }

@@ -1,23 +1,15 @@
-.contact-section {
-  max-width: 75vw;
-  margin-bottom: 10rem;
+.contact {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
 
-.contact-my-info { 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contact-header {
-  color: rgb(195, 208, 243);
-}
-
-.contact-number,
-.contact-email {
-  color: rgb(44, 209, 181);
-  margin: 0.25em;
+  &__info-section { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  &__info {
+    color: rgb(44, 209, 181);
+    margin: 0.25em;
+  }
 }

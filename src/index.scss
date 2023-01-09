@@ -1,15 +1,15 @@
+@use 'assets/abstracts/colors';
+
 html {
   position: relative;
 }
 
 body {
-font: 300 11px/1.4 'Helvetica Neue', 'sans-serif';
-color: #444;
-background: #022c43;
-/* overflow: hidden; */
-/* display: block; */
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
+  font: 300 11px/1.4 'Helvetica Neue', 'sans-serif';
+  color: #444;
+  background: colors.$background-color; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body, html {
@@ -22,26 +22,25 @@ padding: 0;
 overflow: hidden;
 }
 
-$primary-color: #ffd700;
+input,
+textarea {
+  font-family: 'Helvetica Neue';
+}
 
 @import 'animate.css';
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('./assets/fonts/helvetica-neu.ttf') format('ttf');
+  src: url('./assets/abstracts/fonts/helvetica-neu.ttf') format('ttf');
 }
 
 @font-face {
   font-family: 'La Belle Aurore';
-  src: url('./assets/fonts/LaBelleAurore.woff2') format('woff2');
+  src: url('./assets/abstracts/fonts/LaBelleAurore.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Coolvetica';
-  src: url('./assets/fonts/CoolveticaRg-Regular.woff2') format('woff2');
+  src: url('./assets/abstracts/fonts/CoolveticaRg-Regular.woff2') format('woff2');
 }
 
-input,
-textarea {
-  font-family: 'Helvetica Neue';
-}
