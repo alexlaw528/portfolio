@@ -12,7 +12,6 @@ const Home = () => {
   const jobArray2 = ['E', 'n', 'g', 'i', 'n', 'e', 'e', 'r'];
 
   /* Change class of animated letters after running once to prevent further animations upon re-renders */
-
   const changeTextAnimate = () => {
     setTimeout(() => {
       setLetterClass('text-animate-hover');
