@@ -36,7 +36,6 @@
       border-left-color: rgb(44,209,181);
       transition: 1s;
     }
-
   }
 
   &__radio-input {
@@ -49,6 +48,11 @@
   }
 
   /* Experience-toc info section */
+  &__content{
+    display: flex;
+    flex-direction: column;
+  }
+
   &__info {
     color: white;
     animation: fadeIn .5s .25s backwards;
@@ -71,7 +75,8 @@
   }
 
   &__position,
-  &__date {
+  &__date,
+  &__carousel {
     padding-left: 40px;
   }
 
@@ -80,6 +85,11 @@
     list-style: none;
     font-weight: 350;
     letter-spacing: 1px;
+  }
+
+  &__carousel {
+    max-width: 400px;
+    // align-self: center;
   }
 
   &__list{
@@ -99,77 +109,13 @@
   }
 }
 
-
-// .experience-toc__info {
-//   color: white;
-//   animation: fadeIn .5s .25s backwards;
-
-
-//   .experience-company-info {
-//     color: #8d8d8d;
-//     font-weight: 400;
-//     font-size: 2rem;
-//     font-family: sans-serif;
-//     letter-spacing: 3px;
-//   }
-
-//   .experience-toc__position {
-//     color: rgb(44,209,181);
-//     font-weight: 400;
-//     font-size: 1.5rem;
-//     font-family: sans-serif;
-//     letter-spacing: 3px;
-//   }
-
-//   .experience-toc__date {
-//     color: #8d8d8d;
-//     font-weight: 400;
-//     font-size: 1rem;
-//     font-family: sans-serif;
-//     letter-spacing: 3px;
-//   }
-
-//   .experience-company-info,
-//   .experience-toc__position,
-//   .experience-toc__date {
-//     padding-left: 40px;
-//   }
-
-//   .experience-toc__description{
-//     margin-top: 1rem;
-//     list-style: none;
-//     font-weight: 350;
-//     letter-spacing: 1px;
-
-//     .experience-toc__list{
-//       padding-left: 30px;
-//       position: relative;
-//       font-size: 1rem;
-//       margin-bottom: 1rem;
-//       color: rgb(195, 208, 243);
-//     }
-//     .experience-toc__list::before {
-//       content: "▷";
-//       color: rgb(44,209,181);
-//       font-size: 0.1 rem;
-//       position: absolute;
-//       left: 0;
-//     }
-//   }
-// }
-
-
-// &__radio-input {
-//   display: none;
-//   cursor: pointer;
-// }
-
-// #highlight-on {
-//   color: rgb(44,209,181);
-//   background-color: rgb(15, 31, 55);
-//   border-left-color: rgb(44,209,181);
-//   transition: 1s;
-// }
+// React-slick (carousel) css
+.slider-div > img {
+  width: 400px;
+}
+.slick-dots li button:before {
+  color: rgb(44,209,181) !important;
+}
 
 @media screen and (max-width: 650px) {
   .experience-toc {
@@ -217,6 +163,14 @@
   .experience-toc__radio-label {
     font-size: 1rem;
   }
+
+  .experience-toc__carousel {
+    max-width: 250px;
+  }
+
+  .slider-div > img {
+    width: 250px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -227,6 +181,14 @@
 
   .experience-toc__position {
     font-size:1.25rem;
+  }
+
+  .experience-toc__carousel {
+    max-width: 200px;
+  }
+
+  .slider-div > img {
+    width: 200px;
   }
 
 

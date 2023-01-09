@@ -1,12 +1,14 @@
 import React from "react";
 import './ExperienceToC.scss';
-const experienceInfo = require('../../../assets/experienceInfo.js');
+import Carousel from '../../Carousel/Carousel.js'
+import experienceInfo from '../../../assets/experienceInfo.js';
 
 const ExperienceToC = ({
   company, 
   position,
   dateStr,
   description,
+  carouselImage,
   highlight,
   handleExperience
 }) => {
@@ -41,49 +43,59 @@ const ExperienceToC = ({
   )
 
   return (
-    <div className="experience-toc">
-      <div className="experience-toc__radio"> 
-        {radioSelector}
-      </div>
+    <div className="test">
+      <div className="experience-toc">
+        <div className="experience-toc__radio"> 
+          {radioSelector}
+        </div>
 
-      <div 
-          // key={Math.random()}  // WHY DOES THIS CAUSE RE-RENDER
-        className="experience-toc__info" >
-        { 
-          company === "Education" 
-          ? 
-          <>
-            {
-              position.map((ele, idx) => 
-                <>
-                  <div className="experience-toc__position"> {ele} </div>
-                  <div className="experience-toc__date"> {dateStr[idx]} </div>
-                  <ul className="experience-toc__description"> 
-                    {/* <li className="experience-toc__list">
-                      {description[idx]}
-                    </li> */}
-                  </ul>
-                  <br/>
-                  <br/>
-                </>
-              )
-            }
-          </>
-          :
-          <>
-            <div className="experience-toc__position"> {position} </div>
-            <div className="experience-toc__date"> {dateStr} </div>
-            <ul className="experience-toc__description"> 
-              {descriptionBullet} 
-            </ul>
-          </>
-        }
+        <div 
+            // key={Math.random()}  // WHY DOES THIS CAUSE RE-RENDER
+          className="experience-toc__info" 
+        >
+          { 
+            company === "Education" 
+            ? 
+            <>
+              {
+                position.map((ele, idx) => 
+                  <>
+                    <div className="experience-toc__position"> {ele} </div>
+                    <div className="experience-toc__date"> {dateStr[idx]} </div>
+                    <ul className="experience-toc__description"> 
+                      {/* <li className="experience-toc__list">
+                        {description[idx]}
+                      </li> */}
+                    </ul>
+                    <br/>
+                    <br/>
+                  </>
+                )
+              }
+            </>
+            :
+            <>
+              <div className="experience-toc__content">
+                <div className="experience-toc__position"> {position} </div>
+                <div className="experience-toc__date"> {dateStr} </div>
+                <ul className="experience-toc__description"> 
+                  {descriptionBullet} 
+                </ul>
+                <div className="experience-toc__carousel">
+                  <Carousel
+                    carouselImage = {carouselImage}
+                  />
+                </div>
+              </div>
+            </>
+          }
+        </div>
       </div>
+          {/* <Carousel
+            carouselImage = {carouselImage}
+          /> */}
     </div>
   )
 }
 
 export default ExperienceToC
-
-
-// experience-select -> radio__select
