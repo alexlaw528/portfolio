@@ -5,10 +5,11 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.scss';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // import App from "./App.js";
 import Layout from "./components/Layout/Layout.js"
-
 
 const router = createBrowserRouter([
   {

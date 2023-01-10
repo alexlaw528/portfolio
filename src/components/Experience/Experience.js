@@ -1,7 +1,7 @@
-import { cardClasses } from "@mui/material";
 import React from "react";
 import './Experience.scss';
 import ExperienceToC from './ExperienceToC/ExperienceToC.js'
+import { Fade } from "react-awesome-reveal";
 
 const Experience = ({
   company, 
@@ -22,6 +22,7 @@ const Experience = ({
 }) => {
 
   return (
+    <Fade duration="2000">
       <div className="mainpage-section experience" id="nav-experience">
         <h1 className="section-header">
           <span className="section-header-text">My Experience</span>
@@ -44,6 +45,7 @@ const Experience = ({
             handleExperience = {handleExperience}
           />
       </div>
+    </Fade>
   )
 }
 

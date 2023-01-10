@@ -91,9 +91,6 @@ const ExperienceToC = ({
           }
         </div>
       </div>
-          {/* <Carousel
-            carouselImage = {carouselImage}
-          /> */}
     </div>
   )
 }

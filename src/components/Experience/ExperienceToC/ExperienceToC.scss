@@ -117,6 +117,17 @@
   color: rgb(44,209,181) !important;
 }
 
+@media screen and (max-width: 750px) {
+  .experience-toc__carousel {
+    max-width: 350px;
+  }
+
+  .slider-div > img {
+    width: 350px;
+  }
+
+}
+
 @media screen and (max-width: 650px) {
   .experience-toc {
     display: flex;

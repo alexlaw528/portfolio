@@ -1,12 +1,14 @@
 import React from "react";
 import './ProjectCard.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Fade } from 'react-awesome-reveal';
 
 import projectsInfo from '../../../assets/projectsInfo.js';
 const otherProjects = projectsInfo.slice(1, projectsInfo.length); 
 
 const ProjectCard = () => {
   const projectCardList = otherProjects.map((project, index) => 
+    <Fade duration="2000">
       <article className="postcard dark green" key={index}>
         <img className="postcard__img" src={project.image} alt="Title" />
         <div className="postcard__text">
@@ -33,6 +35,7 @@ const ProjectCard = () => {
           </ul>
         </div>
       </article>
+    </Fade>
   )
   
 
