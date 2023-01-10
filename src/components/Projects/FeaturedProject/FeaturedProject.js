@@ -2,6 +2,7 @@ import React from "react";
 import './FeaturedProject.scss';
 import projectsInfo from '../../../assets/projectsInfo.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Fade } from 'react-awesome-reveal';
 
 
 const FeaturedProject = () => {

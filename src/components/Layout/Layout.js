@@ -1,6 +1,6 @@
 import './Layout.scss';
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+
 import Navbar from '../Navbar/Navbar.js';
 import Home from '../Home/Home.js';
 import Experience from '../Experience/Experience.js';
@@ -23,7 +23,7 @@ const Layout = () => {
   const [ highlight, setHighlight ] = useState('radio0');
   const [ navBarVisible, setNavBarVisible ] = useState(true);
   const [ currentScrollY, setCurrentScrollY ] = useState(0);
-  
+
   function handleScroll(event) {
     const scroller = document.querySelector(".page");
 
@@ -63,16 +63,16 @@ const Layout = () => {
         className='page'
       >
         <div class="main-nav">
-            <Navbar 
-              navBarVisible={navBarVisible}
-              animate = {animate}
-              setAnimate = {setAnimate}
-              setHighlight = {setHighlight}
-              setCompany = {setCompany}
-              setPosition = {setPosition}
-              setDateStr = {setDateStr}
-              setDescription = {setDescription}
-            />
+          <Navbar 
+            navBarVisible={navBarVisible}
+            animate = {animate}
+            setAnimate = {setAnimate}
+            setHighlight = {setHighlight}
+            setCompany = {setCompany}
+            setPosition = {setPosition}
+            setDateStr = {setDateStr}
+            setDescription = {setDescription}
+          />
           <Home />
           <Experience 
             company = {company}
