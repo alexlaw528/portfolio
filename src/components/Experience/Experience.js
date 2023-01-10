@@ -22,8 +22,8 @@ const Experience = ({
 }) => {
 
   return (
-    <Fade duration="2000">
-      <div className="mainpage-section experience" id="nav-experience">
+    <div className="mainpage-section experience" id="nav-experience">
+        <Fade duration="2000">
         <h1 className="section-header">
           <span className="section-header-text">My Experience</span>
         </h1>
@@ -44,8 +44,8 @@ const Experience = ({
             setHighlight = {setHighlight}
             handleExperience = {handleExperience}
           />
-      </div>
-    </Fade>
+      </Fade> 
+    </div>
   )
 }
 
