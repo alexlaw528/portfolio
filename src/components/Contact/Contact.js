@@ -30,7 +30,7 @@ const Contact = () => {
         </div>
       </Fade>
     </div>
-)
+  )
 }
 
 export default Contact

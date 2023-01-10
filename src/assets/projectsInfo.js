@@ -44,12 +44,7 @@ const projectsInfo = [
       {
         location: "Github",
         icon: faGithub,
-        link: "",
-      },
-      {
-        location: "Website",
-        icon: faArrowUpRightFromSquare,
-        link: "https://www.overvue.org/"
+        link: "https://github.com/alexlaw528/2D_analysis_supersonic_inlet",
       }
     ],
     tech: ["MATLAB", "CFD", "Modeling"],
