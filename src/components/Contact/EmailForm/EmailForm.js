@@ -1,8 +1,9 @@
-import React, {useRef, useState} from "react";
+import React, {useRef, useState, useEffect} from "react";
 
 import './EmailForm.scss';
 import emailjs from '@emailjs/browser';
 import PacmanLoader from "react-spinners/PacmanLoader";
+import axios from "axios";
 
 /**
  * Test to see if netlify will properly assign these values at build time
@@ -21,6 +22,17 @@ const EmailForm = () => {
   const [inputMessage, setInputMessage] = useState("");
   const [emailLoad, setEmailLoad] = useState(false);
   const [emailError, setEmailError] = useState(false);
+
+  // Netlify lambda function test
+  const fetchData = async () => {
+    const results = await axios.get('/.netlify/functions/getusers')
+    console.log(results)
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, [])
+
 
   const sendEmail = (e) => {
     e.preventDefault();
