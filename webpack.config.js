@@ -50,12 +50,6 @@ module.exports = {
     template: 'index.html',
     favicon: './favicon.ico',
     }),
-    new webpack.DefinePlugin({
-      // 'process.env.REACT_APP_SERVICE_ID': JSON.stringify(process.env.REACT_APP_SERVICE_ID),
-      // 'process.env.REACT_APP_TEMPLATE_ID': JSON.stringify(process.env.REACT_APP_TEMPLATE_ID),
-      // 'process.env.REACT_APP_API_KEY': JSON.stringify(process.env.REACT_APP_API_KEY)
-      // "process.env": dotenv.parsed
-    }),
     new Dotenv({
       systemvars: true
     }),
