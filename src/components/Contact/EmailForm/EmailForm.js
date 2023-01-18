@@ -1,18 +1,8 @@
-import React, {useRef, useState, useEffect} from "react";
+import React, {useRef, useState} from "react";
 
 import './EmailForm.scss';
-import emailjs from '@emailjs/browser';
 import PacmanLoader from "react-spinners/PacmanLoader";
 import axios from "axios";
-
-/**
- * Test to see if netlify will properly assign these values at build time
- * Still a vulnerability as these are exposed on the frontend
- * Need to refactor to use Netlify's lambda functions to make API calls 
-**/
-const service_id = process.env.REACT_APP_SERVICE_ID;
-const template_id = process.env.REACT_APP_TEMPLATE_ID;
-const api_key = process.env.REACT_APP_API_KEY;
 
 const EmailForm = () => {
   const form = useRef();
@@ -23,33 +13,39 @@ const EmailForm = () => {
   const [emailLoad, setEmailLoad] = useState(false);
   const [emailError, setEmailError] = useState(false);
 
-  // Netlify lambda function test
-  const fetchData = async () => {
-    const results = await axios.get('/.netlify/functions/getusers')
-    console.log(results)
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, [])
-
-
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setEmailLoad(true);
 
-    emailjs.sendForm(service_id, template_id, form.current, api_key)
-    .then((result) => {
-        setEmailLoad(false);
-        setInputName("");
-        setInputEmail("");
-        setInputPhone("");
-        setInputMessage("");
-        console.log('response: ', result.text);
-    }, (error) => {
-        console.log('Failed...', error.text);
-        setEmailError(true);
-    });
+    // Grab form data
+    const {user_name, user_email, user_phone, message} = form.current;
+    const emailFormData = {
+      user_name: user_name.value,
+      user_email: user_email.value,
+      user_phone: user_phone.value,
+      message: message.value
+    }
+
+    // Invoke email lambda
+    try {
+      await axios
+        .post('/.netlify/functions/sendEmail', JSON.stringify(emailFormData))
+        .then((response) => response.status)
+        .then((status) => {
+          if (status === 200) {
+            setEmailLoad(false);
+            setInputName("");
+            setInputEmail("");
+            setInputPhone("");
+            setInputMessage("");
+          } else {
+            setEmailError(true);
+          }
+        })
+    } catch (err) {
+      console.error(err);
+      setEmailError(true);
+    }
   };
 
   const closeErrorModal = (e) => {
