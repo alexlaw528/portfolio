@@ -27,7 +27,6 @@ exports.handler = async function(event) {
  await axios
     .post('https://api.emailjs.com/api/v1.0/email/send', emailFormData)
     .then((response) => {
-      console.log('response', response)
       return response.status
     })
     .then((status) => {
