@@ -21,7 +21,6 @@ exports.handler = async function(event) {
       message
     },
     accessToken: private_key
-    // accessToken: badKey
   }
 
  await axios
