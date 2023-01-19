@@ -56,7 +56,7 @@ const Home = () => {
         </div>
       </h1>
       
-      <h2 className="home__subtext"> Engineer / Designer / Developer </h2>
+      <h2 className="home__subtext"> Engineer / Full-stack Developer </h2>
       <a className="home__contact-button" href="#nav-contact">CONTACT ME</a>
     </div>
   )
