@@ -1,4 +1,6 @@
 @use '../../assets/abstracts/colors';
+@use '../../assets/abstracts/fonts';
+
 
 .main-nav {
   position: relative;
@@ -41,7 +43,7 @@
   bottom: 0;
   left: 120px;
   font-size: 18px;
-  font-family: 'La belle Aurore';
+  font-family: fonts.$font-family;
 }
 
 .bottom-tag-html {
@@ -51,9 +53,6 @@
 .mainpage-section {
   width: 90%;
   max-width: 1140px;
-  // margin: 0 auto 0 auto;
-  // margin: 0 3rem 0 3rem;
-  // font-family: 'Hind Siliguri', sans-serif;
 }
 
 .section-header {

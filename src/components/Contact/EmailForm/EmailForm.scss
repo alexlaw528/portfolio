@@ -1,3 +1,6 @@
+@use '../../../assets/abstracts/colors';
+@use '../../../assets/abstracts/fonts';
+
 .email {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 4fr 1fr;
@@ -18,10 +21,10 @@
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 4px;
-    font-family: sans-serif;
+    font-family: fonts.$font-family;
     text-decoration: none;
     padding: 10px 18px;
-    border: 1px solid  rgb(44,209,181);
+    border: 1px solid colors.$secondary-color;
     float: left;
     white-space: nowrap;
     background: transparent;

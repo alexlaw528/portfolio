@@ -1,3 +1,5 @@
+@use '../../assets/abstracts/colors';
+
 .contact {
   display: flex;
   flex-direction: column;
@@ -9,7 +11,7 @@
   }
   
   &__info {
-    color: rgb(44, 209, 181);
+    color: colors.$secondary-color;
     margin: 0.25em;
   }
 }
