@@ -5,8 +5,8 @@ import {
   faBars
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import experienceInfo from '../../assets/experienceInfo.js'
 
-const experienceInfo = require('../../assets/experienceInfo.js');
 const experience =  experienceInfo[0];
 const education = experienceInfo[experienceInfo.length - 1];
 
@@ -28,6 +28,8 @@ const NavBar = ({
 
   const handleExperienceDetails = (type) => {
     const expDetails = (type === "experience") ? experience : education;
+    console.log(experienceInfo)
+    console.log(experience)
     setAnimate(!animate);
     setHighlight((type === "experience") ? "radio0" : `radio${experienceInfo.length - 1}`);
     setCompany(expDetails.company);
