@@ -13,7 +13,6 @@
 
   &:hover {
     animation: rubberBand 1s;
-    // color:  rgb(44,209,181)
   }
 }
 
@@ -22,9 +21,3 @@
     animation-delay: #{calc($i / 10)}s;
   }
 }
-
-// @media (max-width: 400px) {
-//   .text-animate-hover {
-//     font-size: 75px;
-//   }
-// }

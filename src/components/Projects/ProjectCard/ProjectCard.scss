@@ -1,3 +1,5 @@
+@use '../../../assets/abstracts/fonts';
+
 $main-green: rgb(44,209,181) !default;
 $main-green-rgb-015: rgba(121, 221, 9, 0.1) !default;
 $main-grey: rgb(135,136,142) !default;
@@ -5,7 +7,7 @@ $main-blue: rgb(195, 208, 243) !default;
 
 .dark {
 	color: $main-green;
-  font-family: sans-serif;
+  font-family: fonts.$font-family;
 }
 
 .light {
@@ -36,7 +38,7 @@ a, a:hover {
   position: relative;
   color: #ffffff;
 
-  font-family: 'Helvetica Neue';	
+  font-family: fonts.$font-family;	
 	font-weight: initial;
   min-height: 16rem;
 

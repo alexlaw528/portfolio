@@ -1,4 +1,5 @@
 @use '../../assets/abstracts/colors';
+@use '../../assets/abstracts/fonts';
 
 .navbar{
   position: fixed;
@@ -12,7 +13,7 @@
   left: 0;
   width: 100%;
   z-index: 999;
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: fonts.$font-family;
   transition: transform .5s ease-out, visibility .5s;
 
   &--show{
