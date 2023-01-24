@@ -52,7 +52,7 @@ const Layout = () => {
         setPosition(position);
         setDateStr(dateStr);
         setDescription(description);
-        setCarouselImage(carouselImage)
+        setCarouselImage(carouselImage);
       }
     }
   }

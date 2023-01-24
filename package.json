@@ -7,7 +7,7 @@
     "lambda-build": "netlify-lambda build functions",
     "build": "webpack",
     "dev": "NODE_ENV=development webpack serve",
-    "netlify-dev": "netlify dev"
+    "netlify-dev": "netlify dev --targetPort 8080"
   },
   "repository": {
     "type": "git",
