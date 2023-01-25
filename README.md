@@ -14,6 +14,7 @@ run 'npm netlify-dev' to run on localhost:8888 with email function
 2. Setup an Email Service and Email Template
   - Email Service Example
   <img src='./src/assets/images/email_services.png'>
+ 
   - Email Template Example
   <img src='./src/assets/images/contact_form_template.png'>
   - Under Account -> API Settings check the boxes for 
