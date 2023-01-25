@@ -20,6 +20,7 @@ run 'npm netlify-dev' to run on localhost:8888 with email function
   - Under Account -> API Settings check the boxes for 
     - "Allow EmailJS API for non-browser applications"
     - "Use Private Key (recommended)"
+ 
 3. Add API and Private key to .env 
 
 ### Netlify Lambda Function Setup
