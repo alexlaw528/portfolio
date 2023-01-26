@@ -2,10 +2,14 @@
 
 ## Quick Start
 - Run on node v16.19.0 or lower
+- Install dependencies and run dev server
 ```
-run 'npm i' to install dependencies
-run 'npm run dev' to run on localhost:8080
-run 'npm netlify-dev' to run on localhost:8888 with email function
+npm i 
+npm run dev
+```
+- If email service and Netlify is set up, run 
+```
+npm netlify-dev
 ```
 
 ## Setup for Netlify Deployment
