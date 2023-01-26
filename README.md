@@ -16,7 +16,7 @@ run 'npm netlify-dev' to run on localhost:8888 with email function
   <img src='./src/assets/images/email_services.png'>
   - Email Template Example
   <img src='./src/assets/images/contact_form_template.png'>
-  - Under Account -> API Settings check the boxes for 
+  - Under Account -> API Settings check the boxes for:
     - "Allow EmailJS API for non-browser applications"
     - "Use Private Key (recommended)"
 3. Add API and Private key to .env 
