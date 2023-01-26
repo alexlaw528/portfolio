@@ -2,6 +2,8 @@ import overvue from "./images/overvue.jpg";
 import supersonic_inlet from "./images/supersonic_inlet.png";
 import mock_interview from "./images/mock_interview.png";
 import font_customizer from "./images/font_customizer.png"
+import astar_pathfinder from "./images/astar_pathfinder.png"
+import portfolio from "./images/portfolio.png"
 
 import {
   faArrowUpRightFromSquare
@@ -51,6 +53,44 @@ const projectsInfo = [
     year: "2021",
   }, 
   {
+    project: 'A* Pathfinding Visualizer',
+    image: astar_pathfinder,
+    description: "Interactive pathfinding visualization using A* search algorithm",
+    links: [
+      {
+        location: "Github",
+        icon: faGithub,
+        link: "https://github.com/alexlaw528/astar_pathfinding",
+      },
+      {
+        location: "Website",
+        icon: faArrowUpRightFromSquare,
+        link: "https://alexlaw528.itch.io/a-pathfinder",
+      },
+    ],
+    tech: ["Python", "pygame", "pygbag"],
+    year: "2022",
+  }, 
+  {
+    project: 'Developer Portfolio',
+    image: portfolio,
+    description: "Portfolio-ception!",
+    links: [
+      {
+        location: "Github",
+        icon: faGithub,
+        link: "https://github.com/alexlaw528/portfolio",
+      },
+      {
+        location: "Website",
+        icon: faArrowUpRightFromSquare,
+        link: "https://alexlaw.dev/",
+      },
+    ],
+    tech: ["React", "scss", "Netlify", "Netlify-lambda", "webpack", "emailjs"],
+    year: "2022",
+  }, 
+  {
     project: 'Mock Interview Simulator',
     image: mock_interview,
     description: "Mock interview simulator built-in code editor, whiteboard, and text editor",
@@ -64,6 +104,7 @@ const projectsInfo = [
     tech: ["React.js", "Express.js"],
     year: "2022",
   }, 
+  
   {
     project: 'Font Modifier Chrome Extension',
     image: font_customizer,
@@ -78,6 +119,7 @@ const projectsInfo = [
     tech: ["Chrome-Extension-API", "JavaScript"],
     year: "2022",
   }, 
+  
 ];
 
 export default projectsInfo
